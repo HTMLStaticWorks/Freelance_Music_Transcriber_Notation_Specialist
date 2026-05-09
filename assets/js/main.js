@@ -106,16 +106,85 @@ async function loadComponents() {
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <div class="flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10 theme-controls">
+                        <div class="hidden lg:flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10 theme-controls">
                             <button id="themeToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="moon" class="w-4 h-4"></i></button>
                             <button id="rtlToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-bold">RTL</span></button>
                             <a href="login.html" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="user" class="w-4 h-4"></i></a>
                         </div>
-                        <button class="lg:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                        <button id="mobileMenuBtn" class="lg:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
                     </div>
                 </nav>
+
+                <!-- Mobile Menu Overlay -->
+                <div id="mobileMenu" class="fixed inset-0 bg-slate-950 backdrop-blur-xl z-50 translate-x-full transition-transform duration-300 lg:hidden">
+                    <div class="flex flex-col h-full p-8">
+                        <div class="flex items-center justify-between mb-10">
+                            <span class="text-xl font-bold font-sora">Menu</span>
+                            <button id="mobileMenuClose" class="p-2 hover:bg-white/10 rounded-full transition-colors">
+                                <i data-lucide="x" class="w-6 h-6"></i>
+                            </button>
+                        </div>
+                        <div class="flex flex-col gap-6 flex-grow">
+                            <a href="index.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Home</a>
+                            <a href="home2.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Home 2</a>
+                            <a href="about.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">About</a>
+                            <a href="services.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Services</a>
+                            <a href="portfolio.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Portfolio</a>
+                            <a href="genres.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Genres</a>
+                            <a href="pricing.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Pricing</a>
+                            <a href="contact.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Contact</a>
+                            <a href="dashboard.html" class="text-2xl font-medium text-purple-400 hover:text-purple-300 transition-colors">Dashboard</a>
+                        </div>
+                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
+                            <button id="themeToggleMobile" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><i data-lucide="moon" class="w-5 h-5"></i></button>
+                            <button id="rtlToggleMobile" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><span class="text-xs font-bold">RTL</span></button>
+                            <a href="login.html" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><i data-lucide="user" class="w-5 h-5"></i></a>
+                        </div>
+                    </div>
+                </div>
             </header>
         `;
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                mobileMenu.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden';
+            });
+        }
+        if (mobileMenuClose && mobileMenu) {
+            mobileMenuClose.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-0');
+                mobileMenu.classList.add('translate-x-full');
+                document.body.style.overflow = '';
+            });
+        }
+
+        // Mobile Theme Toggle
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                setTheme(newTheme);
+            });
+        }
+
+        // Mobile RTL Toggle
+        const rtlToggleMobile = document.getElementById('rtlToggleMobile');
+        if (rtlToggleMobile) {
+            rtlToggleMobile.addEventListener('click', () => {
+                const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+                const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+                document.documentElement.setAttribute('dir', newDir);
+                localStorage.setItem('dir', newDir);
+            });
+        }
 
         // Highlight Active Link
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
