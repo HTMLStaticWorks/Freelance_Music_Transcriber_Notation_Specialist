@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | NotationPro</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#0B1020] text-[#F8FAFC]">
+<body class="">
 
     <header-component></header-component>
 
@@ -29,81 +30,105 @@
             <div class="container mx-auto px-6">
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Piano Transcription -->
-                    <div class="glass-card p-10 reveal">
-                        <div class="w-14 h-14 bg-cyan-500/10 rounded-xl flex items-center justify-center text-cyan-400 mb-8"><i data-lucide="piano" class="w-7 h-7"></i></div>
-                        <h3 class="text-2xl mb-4 text-left">Piano Transcription</h3>
-                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">From simple melodies to complex virtuosic improvisations. We capture every nuance of your performance.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-cyan-400 w-4 h-4"></i> High accuracy (99.9%)</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-cyan-400 w-4 h-4"></i> Professional PDF & MIDI</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-cyan-400 w-4 h-4"></i> 48-hour delivery</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                    <div class="glass-card overflow-hidden reveal group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/images/piano_service.png" alt="Piano Transcription" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-6">Piano Transcription</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">From simple melodies to complex virtuosic improvisations. We capture every nuance of your performance.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-cyan-400 w-4 h-4"></i> High accuracy (99.9%)</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-cyan-400 w-4 h-4"></i> Professional PDF & MIDI</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-cyan-400 w-4 h-4"></i> 48-hour delivery</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                        </div>
                     </div>
 
                     <!-- Orchestral Scoring -->
-                    <div class="glass-card p-10 reveal" style="transition-delay: 0.1s">
-                        <div class="w-14 h-14 bg-violet-500/10 rounded-xl flex items-center justify-center text-violet-400 mb-8"><i data-lucide="layers" class="w-7 h-7"></i></div>
-                        <h3 class="text-2xl mb-4 text-left">Orchestral Scoring</h3>
-                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Full symphonic realization from your sketches or audio files. Ready for the recording stage.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-violet-400 w-4 h-4"></i> Standard engraving</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-violet-400 w-4 h-4"></i> Part extraction</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-violet-400 w-4 h-4"></i> Layout optimization</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                    <div class="glass-card overflow-hidden reveal group" style="transition-delay: 0.1s">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/images/orchestral_service.png" alt="Orchestral Scoring" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-6">Orchestral Scoring</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Full symphonic realization from your sketches or audio files. Ready for the recording stage.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-violet-400 w-4 h-4"></i> Standard engraving</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-violet-400 w-4 h-4"></i> Part extraction</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-violet-400 w-4 h-4"></i> Layout optimization</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                        </div>
                     </div>
 
                     <!-- MIDI Conversion -->
-                    <div class="glass-card p-10 reveal" style="transition-delay: 0.2s">
-                        <div class="w-14 h-14 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 mb-8"><i data-lucide="cpu" class="w-7 h-7"></i></div>
-                        <h3 class="text-2xl mb-4 text-left">MIDI Conversion</h3>
-                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Transform your handwritten scores or old digital files into modern, high-quality MIDI data.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Multi-channel MIDI</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Articulation mapping</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Dynamic encoding</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                    <div class="glass-card overflow-hidden reveal group" style="transition-delay: 0.2s">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/images/midi_service.png" alt="MIDI Conversion" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-6">MIDI Conversion</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Transform your handwritten scores or old digital files into modern, high-quality MIDI data.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Multi-channel MIDI</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Articulation mapping</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-purple-400 w-4 h-4"></i> Dynamic encoding</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                        </div>
                     </div>
 
                     <!-- Guitar Tabs -->
-                    <div class="glass-card p-10 reveal">
-                        <div class="w-14 h-14 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-400 mb-8"><i data-lucide="guitar" class="w-7 h-7"></i></div>
-                        <h3 class="text-2xl mb-4 text-left">Guitar Tabs</h3>
-                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Accurate tablature with standard notation, including fingerings and technique markers.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-blue-400 w-4 h-4"></i> Standard & Tab</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-blue-400 w-4 h-4"></i> Bends & Slides</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-blue-400 w-4 h-4"></i> Custom tunings</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                    <div class="glass-card overflow-hidden reveal group">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/images/guitar_service.png" alt="Guitar Tabs" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-6">Guitar Tabs</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Accurate tablature with standard notation, including fingerings and technique markers.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-blue-400 w-4 h-4"></i> Standard & Tab</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-blue-400 w-4 h-4"></i> Bends & Slides</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-blue-400 w-4 h-4"></i> Custom tunings</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                        </div>
                     </div>
 
                     <!-- Vocal Notation -->
-                    <div class="glass-card p-10 reveal" style="transition-delay: 0.1s">
-                        <div class="w-14 h-14 bg-pink-500/10 rounded-xl flex items-center justify-center text-pink-400 mb-8"><i data-lucide="mic-2" class="w-7 h-7"></i></div>
-                        <h3 class="text-2xl mb-4 text-left">Vocal Notation</h3>
-                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Lead sheets and choral arrangements with perfect lyric alignment and phonetic markers.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-pink-400 w-4 h-4"></i> Lyric placement</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-pink-400 w-4 h-4"></i> Harmony analysis</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-pink-400 w-4 h-4"></i> SATB arrangements</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                    <div class="glass-card overflow-hidden reveal group" style="transition-delay: 0.1s">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/images/vocal_service.png" alt="Vocal Notation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-6">Vocal Notation</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Lead sheets and choral arrangements with perfect lyric alignment and phonetic markers.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-pink-400 w-4 h-4"></i> Lyric placement</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-pink-400 w-4 h-4"></i> Harmony analysis</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-pink-400 w-4 h-4"></i> SATB arrangements</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                        </div>
                     </div>
 
                     <!-- Drum Charts -->
-                    <div class="glass-card p-10 reveal" style="transition-delay: 0.2s">
-                        <div class="w-14 h-14 bg-orange-500/10 rounded-xl flex items-center justify-center text-orange-400 mb-8"><i data-lucide="drum" class="w-7 h-7"></i></div>
-                        <h3 class="text-2xl mb-4 text-left">Drum Charts</h3>
-                        <p class="text-slate-400 text-sm mb-8 leading-relaxed">Comprehensive percussion notation capturing complex rhythmic patterns and textures.</p>
-                        <ul class="space-y-3 mb-10">
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-orange-400 w-4 h-4"></i> Groove detail</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-orange-400 w-4 h-4"></i> Fill notation</li>
-                            <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-orange-400 w-4 h-4"></i> Custom kits</li>
-                        </ul>
-                        <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                    <div class="glass-card overflow-hidden reveal group" style="transition-delay: 0.2s">
+                        <div class="h-48 overflow-hidden">
+                            <img src="assets/images/drum_service.png" alt="Drum Charts" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-xl font-bold mb-6">Drum Charts</h3>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">Comprehensive percussion notation capturing complex rhythmic patterns and textures.</p>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-orange-400 w-4 h-4"></i> Groove detail</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-orange-400 w-4 h-4"></i> Fill notation</li>
+                                <li class="flex items-center gap-3 text-xs text-slate-500"><i data-lucide="check" class="text-orange-400 w-4 h-4"></i> Custom kits</li>
+                            </ul>
+                            <a href="contact.html" class="btn-primary w-full py-3">Book Service</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -171,3 +196,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

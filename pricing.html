@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing | NotationPro</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#0B1020] text-[#F8FAFC]">
+<body class="">
 
     <header-component></header-component>
 
@@ -135,11 +136,66 @@
             </div>
         </section>
 
-        <!-- FAQ Teaser -->
+        <!-- Investment Calculator -->
+        <section class="py-24 border-y border-white/5 bg-slate-900/50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto glass-card p-12 reveal">
+                    <h2 class="text-3xl lg:text-4xl text-center mb-12">Investment <span class="text-cyan-400">Calculator</span></h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div class="space-y-8">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Project Complexity</label>
+                                <select class="w-full bg-white/5 border border-white/10 rounded-xl p-4 text-white focus:border-cyan-400 outline-none appearance-none">
+                                    <option>Solo Instrument (Sonata, Lead Sheet)</option>
+                                    <option>Chamber Ensemble (Quartet, Jazz Trio)</option>
+                                    <option>Full Orchestra (Symphony, Film Cue)</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-widest text-slate-500 mb-4">Estimated Page Count</label>
+                                <input type="range" min="1" max="100" value="10" class="w-full accent-cyan-400">
+                                <div class="flex justify-between mt-2 text-[10px] text-slate-600 font-bold uppercase">
+                                    <span>1 Page</span>
+                                    <span>100 Pages</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 rounded-2xl p-8 flex flex-col items-center justify-center border border-white/5">
+                            <p class="text-xs text-slate-500 uppercase tracking-widest mb-2">Estimated Investment</p>
+                            <h4 class="text-5xl font-black text-white mb-6">$890</h4>
+                            <p class="text-[10px] text-slate-600 text-center leading-relaxed">This is a preliminary estimate. Final pricing may vary based on handwriting legibility and rhythmic density.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing FAQ -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl lg:text-5xl text-center mb-16">Pricing <span class="text-violet-400">FAQ</span></h2>
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <div class="glass-card p-8 reveal">
+                        <h4 class="text-lg mb-4 text-violet-400">What defines a "Page" in your pricing?</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">A page is defined as a standard A4 or Ledger sized sheet music layout with industry-standard staff sizing. We optimize layouts for maximum readability, not page-count inflation.</p>
+                    </div>
+                    <div class="glass-card p-8 reveal" style="transition-delay: 0.1s">
+                        <h4 class="text-lg mb-4 text-violet-400">Do you offer bulk discounts for albums?</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">Yes. Projects exceeding 50 pages or multi-track album transcriptions are eligible for a 15-20% custom discount. Contact us for a bespoke quote.</p>
+                    </div>
+                    <div class="glass-card p-8 reveal" style="transition-delay: 0.2s">
+                        <h4 class="text-lg mb-4 text-violet-400">Who owns the copyright of the transcriptions?</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed">You do. Upon final payment, you retain 100% ownership and copyright of the digital notation files and any derivative PDF/MIDI data we provide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Teaser -->
         <section class="pb-32">
             <div class="container mx-auto px-6 text-center">
-                <p class="text-slate-400 mb-8">Have more questions about our pricing?</p>
-                <a href="contact.html" class="text-cyan-400 font-bold hover:underline">View the Pricing FAQ</a>
+                <p class="text-slate-400 mb-8">Ready to invest in your musical legacy?</p>
+                <a href="contact.html" class="btn-primary px-12 py-4">Start Your Order</a>
             </div>
         </section>
     </main>
@@ -153,3 +209,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+

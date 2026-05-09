@@ -106,19 +106,61 @@ async function loadComponents() {
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <div class="flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10">
+                        <div class="flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10 theme-controls">
                             <button id="themeToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="moon" class="w-4 h-4"></i></button>
                             <button id="rtlToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-bold">RTL</span></button>
                             <a href="login.html" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="user" class="w-4 h-4"></i></a>
                         </div>
-                        <button class="lg:hidden p-2 text-white"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                        <button class="lg:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
                     </div>
                 </nav>
             </header>
         `;
+
+        // Highlight Active Link
+        const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+        const navLinks = header.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) {
+                link.classList.add('active');
+            }
+        });
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+                setTheme(newTheme);
+            });
+        }
+
+        // RTL Toggle Logic
+        const rtlToggle = document.getElementById('rtlToggle');
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', () => {
+                const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+                const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+                document.documentElement.setAttribute('dir', newDir);
+                localStorage.setItem('dir', newDir);
+            });
+        }
+    }
+
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+
+    // Initialize RTL
+    const savedDir = localStorage.getItem('dir');
+    if (savedDir) {
+        document.documentElement.setAttribute('dir', savedDir);
     }
 
     if (footer) {
+
         footer.innerHTML = `
             <footer class="relative pt-20 pb-10 bg-slate-950 border-t border-white/5 overflow-hidden">
                 <div class="orb orb-2"></div>
@@ -135,21 +177,24 @@ async function loadComponents() {
                                 Premium music transcription and notation services for world-class composers and film scorers.
                             </p>
                             <div class="flex gap-4">
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500/20 transition-all border border-white/10">
-                                    <i data-lucide="twitter" class="w-4 h-4"></i>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500/20 transition-all border border-white/10 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-cyan-400"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-2.6.6-5.6 3.4-6.6 2.7-.6 5.3 1 6.6 3.4.7-.2 1.5-.4 2.2-.6-.5.8-1.1 1.5-1.8 2.1z"/></svg>
                                 </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500/20 transition-all border border-white/10">
-                                    <i data-lucide="instagram" class="w-4 h-4"></i>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500/20 transition-all border border-white/10 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-cyan-400"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
                                 </a>
-                                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500/20 transition-all border border-white/10">
-                                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-cyan-500/20 transition-all border border-white/10 group">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-slate-400 group-hover:text-cyan-400"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                                 </a>
                             </div>
                         </div>
 
-                        <div>
-                            <h4 class="text-white font-semibold mb-6">Services</h4>
-                            <ul class="space-y-4 text-sm text-slate-400">
+                        <div class="footer-col">
+                            <h4 class="text-white font-semibold mb-6 flex items-center justify-between cursor-pointer md:cursor-default" onclick="toggleFooter(this)">
+                                Services 
+                                <i data-lucide="chevron-down" class="w-4 h-4 md:hidden transition-transform"></i>
+                            </h4>
+                            <ul class="space-y-4 text-sm text-slate-400 footer-list">
                                 <li><a href="#" class="hover:text-cyan-400 transition-colors">Piano Transcription</a></li>
                                 <li><a href="#" class="hover:text-cyan-400 transition-colors">Orchestral Scoring</a></li>
                                 <li><a href="#" class="hover:text-cyan-400 transition-colors">MIDI Conversion</a></li>
@@ -157,9 +202,12 @@ async function loadComponents() {
                             </ul>
                         </div>
 
-                        <div>
-                            <h4 class="text-white font-semibold mb-6">Quick Links</h4>
-                            <ul class="space-y-4 text-sm text-slate-400">
+                        <div class="footer-col">
+                            <h4 class="text-white font-semibold mb-6 flex items-center justify-between cursor-pointer md:cursor-default" onclick="toggleFooter(this)">
+                                Quick Links 
+                                <i data-lucide="chevron-down" class="w-4 h-4 md:hidden transition-transform"></i>
+                            </h4>
+                            <ul class="space-y-4 text-sm text-slate-400 footer-list">
                                 <li><a href="portfolio.html" class="hover:text-cyan-400 transition-colors">Our Portfolio</a></li>
                                 <li><a href="pricing.html" class="hover:text-cyan-400 transition-colors">Pricing Plans</a></li>
                                 <li><a href="about.html" class="hover:text-cyan-400 transition-colors">Story & Vision</a></li>
@@ -205,4 +253,34 @@ async function loadComponents() {
 
     // Re-initialize Lucide icons
     lucide.createIcons();
+}
+
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+        const icon = theme === 'light' ? 'moon' : 'sun';
+        themeToggle.innerHTML = `<i data-lucide="${icon}" class="w-4 h-4"></i>`;
+        lucide.createIcons();
+    }
+}
+
+function toggleFooter(element) {
+    if (window.innerWidth >= 768) return;
+    const col = element.parentElement;
+    const list = col.querySelector('.footer-list');
+    const icon = element.querySelector('i');
+    
+    col.classList.toggle('active');
+    if (col.classList.contains('active')) {
+        list.style.maxHeight = list.scrollHeight + "px";
+        list.style.opacity = "1";
+        if (icon) icon.style.transform = "rotate(180deg)";
+    } else {
+        list.style.maxHeight = "0";
+        list.style.opacity = "0";
+        if (icon) icon.style.transform = "rotate(0deg)";
+    }
 }

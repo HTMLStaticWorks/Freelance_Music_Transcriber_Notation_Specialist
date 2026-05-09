@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Genres | NotationPro</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body class="bg-[#0B1020] text-[#F8FAFC]">
+<body class="">
 
     <header-component></header-component>
 
@@ -94,6 +95,84 @@
             </div>
         </section>
 
+        <!-- Specialized Workflows -->
+        <section class="bg-slate-900/50 border-y border-white/5 py-24">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl lg:text-5xl text-center mb-20">Specialized <span class="text-violet-400">Workflows</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-card overflow-hidden reveal group">
+                        <div class="h-40 overflow-hidden">
+                            <img src="assets/images/workflow_orchestral.png" alt="Orchestral Staging" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl mb-4">Orchestral Staging</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">Multi-stage proofing process ensuring zero collisions in dense orchestral scores. Perfect for 100+ piece ensembles.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card overflow-hidden reveal group" style="transition-delay: 0.1s">
+                        <div class="h-40 overflow-hidden">
+                            <img src="assets/images/workflow_vocal.png" alt="Vocal Articulation" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl mb-4">Vocal Articulation</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">Dedicated lyricists ensure phonetic alignment and breath markers are musically placed for natural performance.</p>
+                        </div>
+                    </div>
+                    <div class="glass-card overflow-hidden reveal group" style="transition-delay: 0.2s">
+                        <div class="h-40 overflow-hidden">
+                            <img src="assets/images/workflow_tab.png" alt="Technical Tablature" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        </div>
+                        <div class="p-8">
+                            <h4 class="text-xl mb-4">Technical Tablature</h4>
+                            <p class="text-xs text-slate-500 leading-relaxed">Custom technique markers for polyphonic guitar styles, including bends, taps, and micro-tonal slides.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Showcase -->
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="glass-card p-12 overflow-hidden relative">
+                    <div class="orb orb-2 opacity-10"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl lg:text-5xl text-center mb-16">Audio <span class="text-cyan-400">Showcase</span></h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="bg-white/5 p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center text-white"><i data-lucide="play" class="w-5 h-5 fill-current"></i></div>
+                                <div>
+                                    <h5 class="text-sm font-bold">Classical</h5>
+                                    <p class="text-[10px] text-slate-500">The Grand Sonata</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 rounded-full bg-violet-500 flex items-center justify-center text-white"><i data-lucide="play" class="w-5 h-5 fill-current"></i></div>
+                                <div>
+                                    <h5 class="text-sm font-bold">Jazz</h5>
+                                    <p class="text-[10px] text-slate-500">Blue Swing Trio</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white"><i data-lucide="play" class="w-5 h-5 fill-current"></i></div>
+                                <div>
+                                    <h5 class="text-sm font-bold">Film</h5>
+                                    <p class="text-[10px] text-slate-500">Desert Winds Cue</p>
+                                </div>
+                            </div>
+                            <div class="bg-white/5 p-6 rounded-2xl border border-white/5 flex items-center gap-4 hover:bg-white/10 transition-all cursor-pointer group">
+                                <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white"><i data-lucide="play" class="w-5 h-5 fill-current"></i></div>
+                                <div>
+                                    <h5 class="text-sm font-bold">Pop/Rock</h5>
+                                    <p class="text-[10px] text-slate-500">Neon City Groove</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- CTA -->
         <section class="pb-32">
             <div class="container mx-auto px-6">
@@ -115,3 +194,4 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
