@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | NotationPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0B1020] text-[#F8FAFC]">
+
+    <header-component></header-component>
+
+    <main class="pt-32">
+        <!-- Page Header -->
+        <section class="relative py-20 overflow-hidden">
+            <div class="orb orb-1 opacity-20"></div>
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-5xl lg:text-8xl font-black mb-8">Get in <span class="text-cyan-400">Touch</span></h1>
+                <p class="max-w-2xl mx-auto text-lg text-slate-400 reveal">Ready to start your next masterpiece? We're here to help you every step of the way.</p>
+            </div>
+        </section>
+
+        <!-- Contact Grid -->
+        <section class="pb-32">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                    
+                    <!-- Contact Info -->
+                    <div class="space-y-12 reveal">
+                        <h2 class="text-4xl lg:text-5xl text-left mb-8">Studio <span class="text-violet-400">Information</span></h2>
+                        <div class="space-y-8">
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 shrink-0"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-1">Global Headquarters</h4>
+                                    <p class="text-slate-500 text-sm">42nd Music Avenue, Creative District<br>Manhattan, NY 10001, USA</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-400 shrink-0"><i data-lucide="mail" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-1">Direct Inquiries</h4>
+                                    <p class="text-slate-500 text-sm">studio@notationpro.com<br>support@notationpro.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-6">
+                                <div class="w-12 h-12 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 shrink-0"><i data-lucide="phone" class="w-6 h-6"></i></div>
+                                <div>
+                                    <h4 class="text-xl font-bold mb-1">Concierge Line</h4>
+                                    <p class="text-slate-500 text-sm">+1 (800) NOTATION-PRO<br>Mon-Fri: 9AM - 6PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Teaser -->
+                        <div class="glass-card p-8">
+                            <h4 class="text-xl font-bold mb-4">Frequently Asked Questions</h4>
+                            <div class="space-y-4">
+                                <details class="group border-b border-white/5 pb-4">
+                                    <summary class="flex justify-between items-center cursor-pointer font-bold text-sm text-slate-300 group-hover:text-white transition-colors">
+                                        How long does a transcription take?
+                                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+                                    </summary>
+                                    <p class="mt-4 text-xs text-slate-500 leading-relaxed">Typically, a single-page transcription is delivered within 48 hours. Larger orchestral scores may take 7-10 business days depending on complexity.</p>
+                                </details>
+                                <details class="group border-b border-white/5 pb-4">
+                                    <summary class="flex justify-between items-center cursor-pointer font-bold text-sm text-slate-300 group-hover:text-white transition-colors">
+                                        Do you offer bulk discounts?
+                                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
+                                    </summary>
+                                    <p class="mt-4 text-xs text-slate-500 leading-relaxed">Yes! For projects exceeding 50 pages, we offer specialized studio rates. Contact our concierge for a custom quote.</p>
+                                </details>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="reveal">
+                        <div class="glass-card p-10 lg:p-12 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-8 opacity-10"><i data-lucide="send" class="w-32 h-32 text-cyan-400"></i></div>
+                            <h2 class="text-3xl font-bold mb-8">Send a Message</h2>
+                            <form class="space-y-6">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
+                                        <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
+                                        <input type="email" placeholder="john@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Service Category</label>
+                                    <select class="w-full bg-[#0F172A] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors appearance-none text-slate-400">
+                                        <option>Piano Transcription</option>
+                                        <option>Orchestral Scoring</option>
+                                        <option>MIDI Realization</option>
+                                        <option>Other / Custom</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Message</label>
+                                    <textarea rows="5" placeholder="Tell us about your masterpiece..." class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors"></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary w-full py-4 text-lg">Send Message <i data-lucide="send" class="w-5 h-5"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Waveform Background Visualization -->
+        <section class="h-64 relative bg-slate-950 overflow-hidden">
+            <div class="absolute inset-0 opacity-20">
+                <img src="assets/images/audio_waveform_visual.png" class="w-full h-full object-cover" alt="Waveform">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1020] to-transparent"></div>
+        </section>
+    </main>
+
+    <footer-component></footer-component>
+
+    <button id="backToTop" class="fixed bottom-8 right-8 w-14 h-14 bg-cyan-500 text-white rounded-full flex items-center justify-center shadow-2xl opacity-0 translate-y-5 transition-all duration-300 z-50">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

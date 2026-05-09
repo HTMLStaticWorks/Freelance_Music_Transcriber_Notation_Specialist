@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | NotationPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0B1020] text-[#F8FAFC] min-h-screen flex items-center justify-center p-6 py-20 relative">
+    
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+        <img src="assets/images/music_notation_bg.png" class="w-full h-full object-cover opacity-20" alt="Background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Top UI -->
+    <div class="absolute top-8 right-8 z-20 flex gap-4">
+        <div class="flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
+            <button class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="moon" class="w-4 h-4"></i></button>
+            <button class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-bold">RTL</span></button>
+        </div>
+    </div>
+
+    <!-- Auth Card -->
+    <div class="glass-card w-full max-w-lg p-10 relative z-10 text-center">
+        <a href="index.html" class="inline-flex items-center gap-2 mb-10">
+            <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-400 rounded-lg flex items-center justify-center">
+                <i data-lucide="music-4" class="text-white w-6 h-6"></i>
+            </div>
+            <span class="text-2xl font-bold font-sora">Notation<span class="text-cyan-400">Pro</span></span>
+        </a>
+
+        <h1 class="text-3xl font-bold mb-2">Create Your Studio</h1>
+        <p class="text-slate-500 text-sm mb-10">Join the elite community of composers and creators</p>
+
+        <form class="space-y-6 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">First Name</label>
+                    <input type="text" placeholder="John" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                </div>
+                <div class="space-y-2">
+                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Last Name</label>
+                    <input type="text" placeholder="Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
+                <input type="email" placeholder="name@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+            </div>
+
+            <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Password</label>
+                <div class="relative">
+                    <input type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                    <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                </div>
+                <!-- Password Strength UI -->
+                <div class="flex gap-1 mt-2">
+                    <div class="h-1 flex-grow bg-cyan-500 rounded-full"></div>
+                    <div class="h-1 flex-grow bg-cyan-500 rounded-full"></div>
+                    <div class="h-1 flex-grow bg-white/10 rounded-full"></div>
+                    <div class="h-1 flex-grow bg-white/10 rounded-full"></div>
+                </div>
+                <p class="text-[10px] text-slate-500 uppercase tracking-widest">Strength: Good</p>
+            </div>
+
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="mt-1 rounded border-white/10 bg-white/5 text-cyan-500 focus:ring-cyan-500">
+                <span class="text-xs text-slate-500 group-hover:text-slate-300">I agree to the <a href="#" class="text-cyan-400 font-bold hover:underline">Terms of Service</a> and <a href="#" class="text-cyan-400 font-bold hover:underline">Privacy Policy</a></span>
+            </label>
+
+            <button type="submit" class="btn-primary w-full py-4 text-lg">Create Account</button>
+        </form>
+
+        <div class="my-8 flex items-center gap-4">
+            <div class="h-px flex-grow bg-white/10"></div>
+            <span class="text-[10px] uppercase font-bold text-slate-600">Or sign up with</span>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <button class="flex items-center justify-center gap-3 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all">
+                <i data-lucide="github" class="w-5 h-5"></i>
+                <span class="text-sm font-bold">Github</span>
+            </button>
+            <button class="flex items-center justify-center gap-3 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all">
+                <i data-lucide="chrome" class="w-5 h-5"></i>
+                <span class="text-sm font-bold">Google</span>
+            </button>
+        </div>
+
+        <p class="mt-10 text-sm text-slate-500">
+            Already have an account? <a href="login.html" class="text-cyan-400 font-bold hover:underline">Sign In</a>
+        </p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

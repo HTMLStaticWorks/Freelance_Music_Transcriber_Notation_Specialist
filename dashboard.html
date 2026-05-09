@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NotationPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .sidebar-link.active {
+            background: rgba(56, 189, 248, 0.1);
+            color: #38BDF8;
+            border-right: 3px solid #38BDF8;
+        }
+    </style>
+</head>
+<body class="bg-[#0B1020] text-[#F8FAFC] flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-slate-950 border-r border-white/5 flex flex-col h-full shrink-0">
+        <div class="p-8">
+            <a href="index.html" class="flex items-center gap-2 mb-10">
+                <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-cyan-400 rounded flex items-center justify-center">
+                    <i data-lucide="music-4" class="text-white w-5 h-5"></i>
+                </div>
+                <span class="text-lg font-bold font-sora">Notation<span class="text-cyan-400">Pro</span></span>
+            </a>
+
+            <nav class="space-y-2">
+                <a href="#" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard</a>
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"><i data-lucide="upload-cloud" class="w-4 h-4"></i> Upload Project</a>
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"><i data-lucide="file-music" class="w-4 h-4"></i> My Scores</a>
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"><i data-lucide="headphones" class="w-4 h-4"></i> MIDI Preview</a>
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"><i data-lucide="message-square" class="w-4 h-4"></i> Messages <span class="ml-auto bg-cyan-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">3</span></a>
+                <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> Analytics</a>
+            </nav>
+        </div>
+
+        <div class="mt-auto p-8 border-t border-white/5 space-y-2">
+            <a href="#" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"><i data-lucide="settings" class="w-4 h-4"></i> Settings</a>
+            <a href="login.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-red-400 hover:bg-red-500/10 transition-all"><i data-lucide="log-out" class="w-4 h-4"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col h-full bg-[#0B1020] overflow-y-auto">
+        <!-- Top Header -->
+        <header class="h-20 border-b border-white/5 flex items-center justify-between px-10 shrink-0 sticky top-0 bg-[#0B1020]/80 backdrop-blur-md z-10">
+            <div class="flex items-center gap-4">
+                <h1 class="text-xl font-bold font-sora">Welcome Back, <span class="text-cyan-400">Julian</span></h1>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative">
+                    <i data-lucide="bell" class="text-slate-400 w-5 h-5 cursor-pointer hover:text-white"></i>
+                    <span class="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-right hidden sm:block">
+                        <p class="text-sm font-bold">Julian Vane</p>
+                        <p class="text-[10px] text-slate-500 uppercase tracking-widest">Premium Member</p>
+                    </div>
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500"></div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="p-10 space-y-10">
+            
+            <!-- Metrics -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-6 flex flex-col gap-2">
+                    <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Active Projects</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black">12</span>
+                        <div class="w-10 h-10 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-400"><i data-lucide="folder-kanban" class="w-5 h-5"></i></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex flex-col gap-2">
+                    <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Pages Completed</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black">156</span>
+                        <div class="w-10 h-10 bg-violet-500/10 rounded-lg flex items-center justify-center text-violet-400"><i data-lucide="file-check-2" class="w-5 h-5"></i></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex flex-col gap-2">
+                    <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Hours Saved</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black">480</span>
+                        <div class="w-10 h-10 bg-purple-500/10 rounded-lg flex items-center justify-center text-purple-400"><i data-lucide="clock" class="w-5 h-5"></i></div>
+                    </div>
+                </div>
+                <div class="glass-card p-6 flex flex-col gap-2">
+                    <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Avg. Accuracy</span>
+                    <div class="flex items-center justify-between">
+                        <span class="text-3xl font-black">99.8%</span>
+                        <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400"><i data-lucide="target" class="w-5 h-5"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <!-- Recent Projects -->
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold font-sora">Recent Projects</h2>
+                        <a href="#" class="text-xs text-cyan-400 font-bold hover:underline">View All</a>
+                    </div>
+                    <div class="glass-card overflow-hidden">
+                        <table class="w-full text-left text-sm">
+                            <thead class="bg-white/5 border-b border-white/10">
+                                <tr>
+                                    <th class="p-4 font-bold text-xs">Project Name</th>
+                                    <th class="p-4 font-bold text-xs">Genre</th>
+                                    <th class="p-4 font-bold text-xs">Status</th>
+                                    <th class="p-4 font-bold text-xs">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5">
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-cyan-500/20 flex items-center justify-center text-cyan-400"><i data-lucide="music" class="w-4 h-4"></i></div>
+                                            <span>Symphony No. 5 Revision</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-slate-500">Classical</td>
+                                    <td class="p-4"><span class="px-2 py-1 bg-yellow-500/10 text-yellow-500 text-[10px] font-bold uppercase rounded">In Engraving</span></td>
+                                    <td class="p-4"><i data-lucide="more-horizontal" class="text-slate-600 cursor-pointer hover:text-white"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center text-violet-400"><i data-lucide="mic-2" class="w-4 h-4"></i></div>
+                                            <span>Jazz Piano Solo - 'Blue Note'</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-slate-500">Jazz</td>
+                                    <td class="p-4"><span class="px-2 py-1 bg-green-500/10 text-green-500 text-[10px] font-bold uppercase rounded">Completed</span></td>
+                                    <td class="p-4"><i data-lucide="download" class="text-cyan-400 cursor-pointer hover:text-white w-4 h-4"></i></td>
+                                </tr>
+                                <tr>
+                                    <td class="p-4">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-8 h-8 rounded bg-purple-500/20 flex items-center justify-center text-purple-400"><i data-lucide="film" class="w-4 h-4"></i></div>
+                                            <span>Cybernetic Horizon Main Theme</span>
+                                        </div>
+                                    </td>
+                                    <td class="p-4 text-slate-500">Film Score</td>
+                                    <td class="p-4"><span class="px-2 py-1 bg-cyan-500/10 text-cyan-500 text-[10px] font-bold uppercase rounded">Review Required</span></td>
+                                    <td class="p-4"><i data-lucide="eye" class="text-violet-400 cursor-pointer hover:text-white w-4 h-4"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Upload Area -->
+                    <div class="glass-card p-12 border-dashed border-white/20 flex flex-col items-center justify-center gap-6 group hover:border-cyan-500/50 transition-all cursor-pointer">
+                        <div class="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-all">
+                            <i data-lucide="upload" class="text-slate-500 group-hover:text-cyan-400 transition-all"></i>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-lg font-bold">Upload New Project</h3>
+                            <p class="text-sm text-slate-500">Drag and drop audio files (MP3, WAV, AIFF)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Content (MIDI Preview & Analytics) -->
+                <div class="space-y-10">
+                    <div class="glass-card p-8 space-y-6">
+                        <h2 class="text-xl font-bold font-sora">MIDI Preview</h2>
+                        <div class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
+                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform" class="w-full h-full object-cover opacity-30">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <button class="w-12 h-12 rounded-full bg-cyan-500 flex items-center justify-center text-white shadow-lg"><i data-lucide="play" class="fill-current"></i></button>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-xs">
+                                <span>01:24</span>
+                                <span class="text-slate-500">03:45</span>
+                            </div>
+                            <div class="w-full h-1 bg-white/10 rounded-full overflow-hidden">
+                                <div class="w-1/3 h-full bg-cyan-500"></div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i data-lucide="skip-back" class="w-4 h-4 text-slate-500 cursor-pointer hover:text-white"></i>
+                            <i data-lucide="play-circle" class="w-6 h-6 text-cyan-400 cursor-pointer hover:scale-110 transition-all"></i>
+                            <i data-lucide="skip-forward" class="w-4 h-4 text-slate-500 cursor-pointer hover:text-white"></i>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-8 space-y-6">
+                        <h2 class="text-xl font-bold font-sora">Download Center</h2>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="file-text" class="text-red-400 w-4 h-4"></i>
+                                    <span class="text-xs">Symphony_v2.pdf</span>
+                                </div>
+                                <i data-lucide="download" class="w-4 h-4 text-slate-500 cursor-pointer hover:text-white"></i>
+                            </div>
+                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg border border-white/5">
+                                <div class="flex items-center gap-3">
+                                    <i data-lucide="file-code" class="text-blue-400 w-4 h-4"></i>
+                                    <span class="text-xs">Symphony_v2.xml</span>
+                                </div>
+                                <i data-lucide="download" class="w-4 h-4 text-slate-500 cursor-pointer hover:text-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

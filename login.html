@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | NotationPro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0B1020] text-[#F8FAFC] min-h-screen flex items-center justify-center p-6 py-20 relative">
+    
+    <!-- Background Elements -->
+    <div class="absolute inset-0 z-0">
+        <img src="assets/images/music_notation_bg.png" class="w-full h-full object-cover opacity-20" alt="Background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+    </div>
+
+    <!-- Top UI -->
+    <div class="absolute top-8 right-8 z-20 flex gap-4">
+        <div class="flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10 backdrop-blur-md">
+            <button class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="moon" class="w-4 h-4"></i></button>
+            <button class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-bold">RTL</span></button>
+        </div>
+    </div>
+
+    <!-- Auth Card -->
+    <div class="glass-card w-full max-w-md p-10 relative z-10 text-center">
+        <a href="index.html" class="inline-flex items-center gap-2 mb-10">
+            <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-400 rounded-lg flex items-center justify-center">
+                <i data-lucide="music-4" class="text-white w-6 h-6"></i>
+            </div>
+            <span class="text-2xl font-bold font-sora">Notation<span class="text-cyan-400">Pro</span></span>
+        </a>
+
+        <h1 class="text-3xl font-bold mb-2">Welcome Back</h1>
+        <p class="text-slate-500 text-sm mb-10">Sign in to manage your musical scores</p>
+
+        <form class="space-y-6">
+            <div class="space-y-2 text-left">
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
+                <div class="relative">
+                    <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500"></i>
+                    <input type="email" placeholder="name@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                </div>
+            </div>
+
+            <div class="space-y-2 text-left">
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Password</label>
+                <div class="relative">
+                    <i data-lucide="lock" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-500"></i>
+                    <input type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl pl-12 pr-12 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                    <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs">
+                <label class="flex items-center gap-2 cursor-pointer text-slate-500 hover:text-slate-300">
+                    <input type="checkbox" class="rounded border-white/10 bg-white/5 text-cyan-500 focus:ring-cyan-500"> Remember me
+                </label>
+                <a href="#" class="text-cyan-400 font-bold hover:underline">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn-primary w-full py-4 text-lg">Sign In</button>
+        </form>
+
+        <div class="my-8 flex items-center gap-4">
+            <div class="h-px flex-grow bg-white/10"></div>
+            <span class="text-[10px] uppercase font-bold text-slate-600">Or continue with</span>
+            <div class="h-px flex-grow bg-white/10"></div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <button class="flex items-center justify-center gap-3 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all">
+                <i data-lucide="github" class="w-5 h-5"></i>
+                <span class="text-sm font-bold">Github</span>
+            </button>
+            <button class="flex items-center justify-center gap-3 py-3 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all">
+                <i data-lucide="chrome" class="w-5 h-5"></i>
+                <span class="text-sm font-bold">Google</span>
+            </button>
+        </div>
+
+        <p class="mt-10 text-sm text-slate-500">
+            Don't have an account? <a href="register.html" class="text-cyan-400 font-bold hover:underline">Create an account</a>
+        </p>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
