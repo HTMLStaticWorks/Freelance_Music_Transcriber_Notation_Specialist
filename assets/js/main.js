@@ -1,40 +1,46 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize GSAP
-    gsap.registerPlugin(ScrollTrigger);
+    if (typeof gsap !== 'undefined') {
+        if (typeof ScrollTrigger !== 'undefined') {
+            gsap.registerPlugin(ScrollTrigger);
+        }
 
-    // Page Reveal Animations
-    const reveals = document.querySelectorAll('.reveal');
-    reveals.forEach((el) => {
-        gsap.to(el, {
-            scrollTrigger: {
-                trigger: el,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            },
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: 'power3.out'
+        // Page Reveal Animations
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: 'top 85%',
+                    toggleActions: 'play none none none'
+                },
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
         });
-    });
+    }
 
     // Parallax Effects
-    const parallaxItems = document.querySelectorAll('.parallax');
-    parallaxItems.forEach((item) => {
-        const speed = item.dataset.speed || 0.5;
-        gsap.to(item, {
-            scrollTrigger: {
-                trigger: item,
-                start: 'top bottom',
-                end: 'bottom top',
-                scrub: true
-            },
-            y: (i, target) => -ScrollTrigger.maxScroll(window) * speed * 0.1
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        const parallaxItems = document.querySelectorAll('.parallax');
+        parallaxItems.forEach((item) => {
+            const speed = item.dataset.speed || 0.5;
+            gsap.to(item, {
+                scrollTrigger: {
+                    trigger: item,
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    scrub: true
+                },
+                y: (i, target) => -ScrollTrigger.maxScroll(window) * speed * 0.1
+            });
         });
-    });
+    }
 
     // Mouse Reactive Depth (Desktop only)
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth > 1024 && typeof gsap !== 'undefined') {
         document.addEventListener('mousemove', (e) => {
             const cards = document.querySelectorAll('.tilt-card');
             const { clientX, clientY } = e;
@@ -76,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Re-initialize Lucide icons
+    lucide.createIcons();
 });
 
 async function loadComponents() {
@@ -93,22 +102,22 @@ async function loadComponents() {
                         <span class="text-xl font-bold font-sora tracking-tight">Notation<span class="text-cyan-400">Pro</span></span>
                     </a>
 
-                    <div class="hidden lg:flex items-center gap-8">
-                        <a href="index.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Home</a>
-                        <a href="home2.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Home 2</a>
-                        <a href="about.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">About</a>
-                        <a href="services.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Services</a>
-                        <a href="portfolio.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Portfolio</a>
-                        <a href="genres.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Genres</a>
-                        <a href="pricing.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Pricing</a>
-                        <a href="contact.html" class="nav-link text-sm font-medium hover:text-cyan-400 transition-colors">Contact</a>
-                        <a href="dashboard.html" class="nav-link text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">Dashboard</a>
+                    <div class="hidden lg:flex items-center gap-4 xl:gap-8">
+                        <a href="index.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Home</a>
+                        <a href="home2.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Home 2</a>
+                        <a href="about.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">About</a>
+                        <a href="services.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Services</a>
+                        <a href="portfolio.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Portfolio</a>
+                        <a href="genres.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Genres</a>
+                        <a href="pricing.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Pricing</a>
+                        <a href="contact.html" class="nav-link text-[13px] xl:text-sm font-medium hover:text-cyan-400 transition-colors">Contact</a>
+                        <a href="dashboard.html" class="nav-link text-[13px] xl:text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">Dashboard</a>
                     </div>
 
                     <div class="flex items-center gap-4">
                         <div class="hidden lg:flex items-center gap-3 bg-white/5 p-1 rounded-full border border-white/10 theme-controls">
                             <button id="themeToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="moon" class="w-4 h-4"></i></button>
-                            <button id="rtlToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-bold">RTL</span></button>
+                            <button id="rtlToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-black tracking-tighter">RTL</span></button>
                             <a href="login.html" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="user" class="w-4 h-4"></i></a>
                         </div>
                         <button id="mobileMenuBtn" class="lg:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
@@ -116,24 +125,24 @@ async function loadComponents() {
                 </nav>
 
                 <!-- Mobile Menu Overlay -->
-                <div id="mobileMenu" class="fixed inset-0 bg-slate-950 backdrop-blur-xl z-50 translate-x-full transition-transform duration-300 lg:hidden">
-                    <div class="flex flex-col h-full p-8">
+                <div id="mobileMenu" style="position: fixed; inset: 0; z-index: 999999; background: #020617; transform: translateX(100%); transition: transform 0.3s ease-out; overflow-y: auto;" class="lg:hidden">
+                    <div id="mobileMenuInner" style="display: flex; flex-direction: column; min-height: 100%; padding: 2rem; background: inherit;">
                         <div class="flex items-center justify-between mb-10">
                             <span class="text-xl font-bold font-sora">Menu</span>
                             <button id="mobileMenuClose" class="p-2 hover:bg-white/10 rounded-full transition-colors">
                                 <i data-lucide="x" class="w-6 h-6"></i>
                             </button>
                         </div>
-                        <div class="flex flex-col gap-6 flex-grow">
-                            <a href="index.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Home</a>
-                            <a href="home2.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Home 2</a>
-                            <a href="about.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">About</a>
-                            <a href="services.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Services</a>
-                            <a href="portfolio.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Portfolio</a>
-                            <a href="genres.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Genres</a>
-                            <a href="pricing.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Pricing</a>
-                            <a href="contact.html" class="text-2xl font-medium hover:text-cyan-400 transition-colors">Contact</a>
-                            <a href="dashboard.html" class="text-2xl font-medium text-purple-400 hover:text-purple-300 transition-colors">Dashboard</a>
+                        <div class="flex flex-col gap-8 flex-grow">
+                            <a href="index.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Home</a>
+                            <a href="home2.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Home 2</a>
+                            <a href="about.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">About</a>
+                            <a href="services.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Services</a>
+                            <a href="portfolio.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Portfolio</a>
+                            <a href="genres.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Genres</a>
+                            <a href="pricing.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Pricing</a>
+                            <a href="contact.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Contact</a>
+                            <a href="dashboard.html" class="nav-link mobile-nav-link text-3xl font-black text-purple-400 hover:text-purple-300 transition-colors">Dashboard</a>
                         </div>
                         <div class="flex items-center gap-4 pt-6 border-t border-white/10">
                             <button id="themeToggleMobile" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><i data-lucide="moon" class="w-5 h-5"></i></button>
@@ -152,15 +161,16 @@ async function loadComponents() {
 
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
+                const theme = document.documentElement.getAttribute('data-theme');
+                mobileMenu.style.background = theme === 'light' ? '#FFFFFF' : '#020617';
+                mobileMenu.style.color = theme === 'light' ? '#000000' : '#FFFFFF';
+                mobileMenu.style.transform = 'translateX(0)';
                 document.body.style.overflow = 'hidden';
             });
         }
         if (mobileMenuClose && mobileMenu) {
             mobileMenuClose.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('translate-x-full');
+                mobileMenu.style.transform = 'translateX(100%)';
                 document.body.style.overflow = '';
             });
         }
@@ -193,29 +203,12 @@ async function loadComponents() {
             const linkPath = link.getAttribute('href');
             if (linkPath === currentPath) {
                 link.classList.add('active');
+                if (link.classList.contains('mobile-nav-link')) {
+                    link.style.color = 'var(--accent-primary)';
+                    link.classList.add('text-cyan-400');
+                }
             }
         });
-
-        // Theme Toggle Logic
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                setTheme(newTheme);
-            });
-        }
-
-        // RTL Toggle Logic
-        const rtlToggle = document.getElementById('rtlToggle');
-        if (rtlToggle) {
-            rtlToggle.addEventListener('click', () => {
-                const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-                const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-                document.documentElement.setAttribute('dir', newDir);
-                localStorage.setItem('dir', newDir);
-            });
-        }
     }
 
     // Initialize Theme
@@ -227,6 +220,26 @@ async function loadComponents() {
     if (savedDir) {
         document.documentElement.setAttribute('dir', savedDir);
     }
+
+    // Global Toggles (Login/Register/Header)
+    const themeToggles = document.querySelectorAll('#themeToggle, #themeToggleMobile');
+    themeToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    });
+
+    const rtlToggles = document.querySelectorAll('#rtlToggle, #rtlToggleMobile');
+    rtlToggles.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+            document.documentElement.setAttribute('dir', newDir);
+            localStorage.setItem('dir', newDir);
+        });
+    });
 
     if (footer) {
 
@@ -320,18 +333,21 @@ async function loadComponents() {
         `;
     }
 
-    // Re-initialize Lucide icons
-    lucide.createIcons();
+    // Icons are now initialized in the DOMContentLoaded listener
 }
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     
-    const themeToggle = document.getElementById('themeToggle');
-    if (themeToggle) {
+    const themeToggles = document.querySelectorAll('#themeToggle, #themeToggleMobile');
+    themeToggles.forEach(toggle => {
         const icon = theme === 'light' ? 'moon' : 'sun';
-        themeToggle.innerHTML = `<i data-lucide="${icon}" class="w-4 h-4"></i>`;
+        toggle.innerHTML = `<i data-lucide="${icon}" class="w-5 h-5"></i>`;
+    });
+    
+    // Always re-create icons after theme change
+    if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }
 }

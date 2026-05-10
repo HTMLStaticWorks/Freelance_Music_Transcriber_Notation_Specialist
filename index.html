@@ -19,7 +19,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <section class="relative min-h-screen flex items-center justify-center pt-32 overflow-hidden">
             <div class="orb orb-1"></div>
             <div class="orb orb-2"></div>
 
@@ -72,14 +72,15 @@
                     Industry Giants</p>
                 <div
                     class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-50 grayscale hover:grayscale-0 transition-all">
-                    <div class="flex items-center gap-2"><i data-lucide="music" class="w-8 h-8"></i> <span
+                    <div class="flex items-center gap-2 brand-sony"><i data-lucide="music" class="w-8 h-8"></i> <span
                             class="font-bold text-xl">SONY MUSIC</span></div>
-                    <div class="flex items-center gap-2"><i data-lucide="mic-2" class="w-8 h-8"></i> <span
+                    <div class="flex items-center gap-2 brand-warner"><i data-lucide="mic-2" class="w-8 h-8"></i> <span
                             class="font-bold text-xl">WARNER BROS</span></div>
-                    <div class="flex items-center gap-2"><i data-lucide="radio" class="w-8 h-8"></i> <span
+                    <div class="flex items-center gap-2 brand-netflix"><i data-lucide="radio" class="w-8 h-8"></i> <span
                             class="font-bold text-xl">NETFLIX</span></div>
-                    <div class="flex items-center gap-2"><i data-lucide="disc" class="w-8 h-8"></i> <span
-                            class="font-bold text-xl">UNIVERSAL</span></div>
+                    <div class="flex items-center gap-2 brand-universal"><i data-lucide="disc" class="w-8 h-8"></i>
+                        <span class="font-bold text-xl">UNIVERSAL</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -95,9 +96,10 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="glass-card p-8 card-content-center reveal">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-6">
-                            <i data-lucide="piano" class="w-8 h-8"></i>
+                        <div class="mb-6 w-full h-48 rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                            <img src="assets/images/service_piano.png"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                alt="Piano Transcription">
                         </div>
                         <h3 class="text-2xl mb-4">Piano Transcription</h3>
                         <p class="text-slate-400 text-sm">Complex solo arrangements and accompaniments transcribed with
@@ -105,9 +107,10 @@
                     </div>
 
                     <div class="glass-card p-8 card-content-center reveal" style="transition-delay: 0.1s;">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-violet-500/10 flex items-center justify-center text-violet-400 mb-6">
-                            <i data-lucide="layers" class="w-8 h-8"></i>
+                        <div class="mb-6 w-full h-48 rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                            <img src="assets/images/service_orchestra.png"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                alt="Orchestral Scoring">
                         </div>
                         <h3 class="text-2xl mb-4">Orchestral Scoring</h3>
                         <p class="text-slate-400 text-sm">Full symphonic realization, engraving, and part extraction for
@@ -115,9 +118,10 @@
                     </div>
 
                     <div class="glass-card p-8 card-content-center reveal" style="transition-delay: 0.2s;">
-                        <div
-                            class="w-16 h-16 rounded-2xl bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
-                            <i data-lucide="cpu" class="w-8 h-8"></i>
+                        <div class="mb-6 w-full h-48 rounded-2xl overflow-hidden shadow-lg border border-white/10">
+                            <img src="assets/images/service_midi.png"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                                alt="MIDI Realization">
                         </div>
                         <h3 class="text-2xl mb-4">MIDI Realization</h3>
                         <p class="text-slate-400 text-sm">Transforming your scores into high-quality, realistic audio
@@ -259,12 +263,13 @@
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i>
                         </div>
                         <p class="text-slate-300 mb-6 italic">"The level of detail in the orchestral arrangement was
-                            beyond my expectations. Simply world-class."</p>
+                            beyond my expectations. Simply world"</p>
                         <div class="flex items-center gap-4">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1oAwoErlm718BkspzBeFo1r0_OJRM-dxtjQ&s" alt="Julian Vane" class="w-12 h-12 rounded-full object-cover">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1oAwoErlm718BkspzBeFo1r0_OJRM-dxtjQ&s"
+                                alt="Julian Vane" class="w-12 h-12 rounded-full object-cover">
                             <div>
                                 <h5 class="font-bold">Julian Vane</h5>
-                                <p class="text-xs text-slate-500">Film Composer, LA</p>
+                                <p class="text-xs text-slate-500">Film Composer,</p>
                             </div>
                         </div>
                     </div>
@@ -280,7 +285,8 @@
                         <p class="text-slate-300 mb-6 italic">"Perfect transcription of a very complex jazz
                             improvisation. Not a single note missed!"</p>
                         <div class="flex items-center gap-4">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDms-WR7x1QYilZCzsE5KarIgjj8kM20SXYg&s" alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDms-WR7x1QYilZCzsE5KarIgjj8kM20SXYg&s"
+                                alt="Sarah Jenkins" class="w-12 h-12 rounded-full object-cover">
                             <div>
                                 <h5 class="font-bold">Sarah Jenkins</h5>
                                 <p class="text-xs text-slate-500">Jazz Pianist</p>
@@ -299,7 +305,8 @@
                         <p class="text-slate-300 mb-6 italic">"Fast turnaround and beautiful engraving. My orchestra was
                             able to sight-read it perfectly."</p>
                         <div class="flex items-center gap-4">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXDoYaLzrWdqj11U7AwcOk38FvTFcZFnC3w&s" alt="Michael Rossi" class="w-12 h-12 rounded-full object-cover object-bottom">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXDoYaLzrWdqj11U7AwcOk38FvTFcZFnC3w&s"
+                                alt="Michael Rossi" class="w-12 h-12 rounded-full object-cover object-bottom">
                             <div>
                                 <h5 class="font-bold">Michael Rossi</h5>
                                 <p class="text-xs text-slate-500">Conductor</p>
@@ -313,7 +320,7 @@
         <!-- Live Notation Preview -->
         <section class="relative bg-slate-900/50">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-16">
                     <div class="lg:w-1/2 reveal">
                         <img src="assets/images/sheet_music_preview.png" alt="Sheet Music Preview"
                             class="rounded-3xl shadow-2xl border border-white/10">
@@ -321,16 +328,42 @@
                     <div class="lg:w-1/2 reveal">
                         <h2 class="text-4xl lg:text-6xl text-left mb-8">Crystal Clear <span
                                 class="text-cyan-400">Engraving</span></h2>
-                        <p class="text-slate-400 mb-8">We use industry-standard software to ensure your scores are not
-                            just accurate, but visually stunning and publication-ready.</p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
-                                    class="text-cyan-400"></i> 1200 DPI High-Resolution PDFs</li>
-                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
-                                    class="text-cyan-400"></i> Standard Music Font (Bravura/Petaluma)</li>
-                            <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
-                                    class="text-cyan-400"></i> Perfectly spaced layout for readability</li>
-                        </ul>
+                        <p class="text-slate-400 mb-8">We leverage advanced algorithmic layout engines and manual
+                            fine-tuning to ensure your scores meet the rigorous standards of the world's leading
+                            publishing houses and orchestras.</p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
+                                        class="text-cyan-400 w-5 h-5"></i> 1200 DPI High-Res PDFs</li>
+                                <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
+                                        class="text-cyan-400 w-5 h-5"></i> SMuFL Compliant Fonts</li>
+                                <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
+                                        class="text-cyan-400 w-5 h-5"></i> Automated Collision Avoidance</li>
+                            </ul>
+                            <ul class="space-y-4">
+                                <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
+                                        class="text-cyan-400 w-5 h-5"></i> Expert Part Extraction</li>
+                                <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
+                                        class="text-cyan-400 w-5 h-5"></i> Intelligent Page Turns</li>
+                                <li class="flex items-center gap-3 text-slate-300"><i data-lucide="check"
+                                        class="text-cyan-400 w-5 h-5"></i> Custom House Styles</li>
+                            </ul>
+                        </div>
+                        <div class="flex flex-wrap gap-8 py-8 border-t border-white/10">
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-black text-white">99.9%</span>
+                                <span class="text-xs uppercase tracking-widest text-slate-500">Readability</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-black text-white">4K</span>
+                                <span class="text-xs uppercase tracking-widest text-slate-500">Vector Quality</span>
+                            </div>
+                            <div class="flex flex-col">
+                                <span class="text-3xl font-black text-white">Zero</span>
+                                <span class="text-xs uppercase tracking-widest text-slate-500">Overlap Errors</span>
+                            </div>
+                        </div>
+                        <a href="portfolio.html" class="btn-secondary mt-4">Download Sample Score</a>
                     </div>
                 </div>
             </div>

@@ -66,14 +66,14 @@
                                         How long does a transcription take?
                                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
                                     </summary>
-                                    <p class="mt-4 text-xs text-slate-500 leading-relaxed">Typically, a single-page transcription is delivered within 48 hours. Larger orchestral scores may take 7-10 business days depending on complexity.</p>
+                                    <p class="mt-4 text-sm text-slate-400 leading-relaxed font-medium">Typically, a single-page transcription is delivered within 48 hours. Larger orchestral scores may take 7-10 business days depending on complexity.</p>
                                 </details>
                                 <details class="group border-b border-white/5 pb-4">
                                     <summary class="flex justify-between items-center cursor-pointer font-bold text-sm text-slate-300 group-hover:text-white transition-colors">
                                         Do you offer bulk discounts?
                                         <i data-lucide="chevron-down" class="w-4 h-4 transition-transform group-open:rotate-180"></i>
                                     </summary>
-                                    <p class="mt-4 text-xs text-slate-500 leading-relaxed">Yes! For projects exceeding 50 pages, we offer specialized studio rates. Contact our concierge for a custom quote.</p>
+                                    <p class="mt-4 text-sm text-slate-400 leading-relaxed font-medium">Yes! For projects exceeding 50 pages, we offer specialized studio rates. Contact our concierge for a custom quote.</p>
                                 </details>
                             </div>
                         </div>
@@ -88,21 +88,24 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div class="space-y-2">
                                         <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Full Name</label>
-                                        <input type="text" placeholder="John Doe" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                                        <input type="text" placeholder="Your Full Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
                                     </div>
                                     <div class="space-y-2">
                                         <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
-                                        <input type="email" placeholder="john@example.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                                        <input type="email" placeholder="your@email.com" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
                                     </div>
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Service Category</label>
-                                    <select class="w-full bg-[#0F172A] border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors appearance-none text-slate-400">
-                                        <option>Piano Transcription</option>
-                                        <option>Orchestral Scoring</option>
-                                        <option>MIDI Realization</option>
-                                        <option>Other / Custom</option>
-                                    </select>
+                                    <div class="relative">
+                                        <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors appearance-none text-slate-300 cursor-pointer">
+                                            <option class="bg-slate-900">Piano Transcription</option>
+                                            <option class="bg-slate-900">Orchestral Scoring</option>
+                                            <option class="bg-slate-900">MIDI Realization</option>
+                                            <option class="bg-slate-900">Other / Custom</option>
+                                        </select>
+                                        <i data-lucide="chevron-down" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 pointer-events-none"></i>
+                                    </div>
                                 </div>
                                 <div class="space-y-2">
                                     <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Message</label>
@@ -113,6 +116,20 @@
                         </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Map -->
+        <section class="py-0">
+            <div class="container mx-auto px-6">
+                <div class="glass-card p-4 h-[450px] overflow-hidden reveal">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.4746447545!2d-73.9856556845941!3d40.74844057932851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" 
+                        class="w-full h-full grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-700 border-0 rounded-2xl" 
+                        allowfullscreen="" 
+                        loading="lazy">
+                    </iframe>
                 </div>
             </div>
         </section>

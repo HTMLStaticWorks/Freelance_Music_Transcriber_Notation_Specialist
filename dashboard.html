@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,38 +18,58 @@
         }
     </style>
 </head>
+
 <body class=" flex h-screen overflow-hidden">
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-slate-950 border-r border-white/5 flex flex-col h-full shrink-0">
+    <!-- Sidebar (Desktop) -->
+    <aside class="hidden lg:flex w-64 bg-slate-950 border-r border-white/5 flex-col h-full shrink-0">
         <div class="p-8">
             <a href="index.html" class="flex items-center gap-2 mb-10">
-                <div class="w-8 h-8 bg-gradient-to-br from-violet-500 to-cyan-400 rounded flex items-center justify-center">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-violet-500 to-cyan-400 rounded flex items-center justify-center">
                     <i data-lucide="music-4" class="text-white w-5 h-5"></i>
                 </div>
                 <span class="text-lg font-bold font-sora">Notation<span class="text-cyan-400">Pro</span></span>
             </a>
 
             <nav class="space-y-2">
-                <a href="#dashboard" class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all" onclick="setActiveLink(this)"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard</a>
-                <a href="#upload-project" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all" onclick="setActiveLink(this)"><i data-lucide="upload-cloud" class="w-4 h-4"></i> Upload Project</a>
-                <a href="#my-scores" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all" onclick="setActiveLink(this)"><i data-lucide="file-music" class="w-4 h-4"></i> My Scores</a>
-                <a href="#midi-preview" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all" onclick="setActiveLink(this)"><i data-lucide="headphones" class="w-4 h-4"></i> MIDI Preview</a>
-                <a href="#messages" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all" onclick="setActiveLink(this)"><i data-lucide="message-square" class="w-4 h-4"></i> Messages <span class="ml-auto bg-cyan-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">3</span></a>
-                <a href="#analytics" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all" onclick="setActiveLink(this)"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> Analytics</a>
+                <a href="#dashboard"
+                    class="sidebar-link active flex items-center gap-3 px-4 py-3 rounded-lg text-sm transition-all"
+                    onclick="setActiveLink(this)"><i data-lucide="layout-dashboard" class="w-4 h-4"></i> Dashboard</a>
+                <a href="#upload-project"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"
+                    onclick="setActiveLink(this)"><i data-lucide="upload-cloud" class="w-4 h-4"></i> Upload Project</a>
+                <a href="#my-scores"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"
+                    onclick="setActiveLink(this)"><i data-lucide="file-music" class="w-4 h-4"></i> My Scores</a>
+                <a href="#midi-preview"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"
+                    onclick="setActiveLink(this)"><i data-lucide="headphones" class="w-4 h-4"></i> MIDI Preview</a>
+                <a href="#messages"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"
+                    onclick="setActiveLink(this)"><i data-lucide="message-square" class="w-4 h-4"></i> Messages <span
+                        class="ml-auto bg-cyan-500 text-white text-[10px] px-1.5 py-0.5 rounded-full">3</span></a>
+                <a href="#analytics"
+                    class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"
+                    onclick="setActiveLink(this)"><i data-lucide="bar-chart-3" class="w-4 h-4"></i> Analytics</a>
             </nav>
         </div>
 
         <div class="mt-auto p-8 border-t border-white/5 space-y-2">
-            <a href="#settings" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all" onclick="setActiveLink(this)"><i data-lucide="settings" class="w-4 h-4"></i> Settings</a>
-            <a href="login.html" class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-red-400 hover:bg-red-500/10 transition-all"><i data-lucide="log-out" class="w-4 h-4"></i> Logout</a>
+            <a href="#settings"
+                class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-slate-500 hover:bg-white/5 hover:text-white transition-all"
+                onclick="setActiveLink(this)"><i data-lucide="settings" class="w-4 h-4"></i> Settings</a>
+            <a href="login.html"
+                class="sidebar-link flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-red-400 hover:bg-red-500/10 transition-all"><i
+                    data-lucide="log-out" class="w-4 h-4"></i> Logout</a>
         </div>
     </aside>
 
     <!-- Main Content -->
     <main class="flex-grow flex flex-col h-full bg-[#0B1020] overflow-y-auto">
         <!-- Top Header -->
-        <header class="h-20 border-b border-white/5 flex items-center justify-between px-10 shrink-0 sticky top-0 bg-[#0B1020]/80 backdrop-blur-md z-10">
+        <header
+            class="h-20 border-b border-white/5 flex items-center justify-between px-6 lg:px-10 shrink-0 sticky top-0 bg-[#0B1020]/80 backdrop-blur-md z-10">
             <div class="flex items-center gap-4">
                 <h1 class="text-xl font-bold font-sora">Welcome Back, <span class="text-cyan-400">Julian</span></h1>
             </div>
@@ -62,34 +83,43 @@
                         <p class="text-sm font-bold text-white">Julian Vane</p>
                         <p class="text-[10px] text-cyan-400 font-bold uppercase tracking-widest">Premium Member</p>
                     </div>
-                    <img src="https://i.scdn.co/image/ab676161000051743b8fb7891efcb54be42dd496" class="w-10 h-10 rounded-full object-cover border border-white/10" alt="Julian Vane">
+                    <img src="https://i.scdn.co/image/ab676161000051743b8fb7891efcb54be42dd496"
+                        class="w-10 h-10 rounded-full object-cover border border-white/10" alt="Julian Vane">
                 </div>
             </div>
         </header>
 
         <!-- Dashboard Content -->
-        <div class="p-10 space-y-16">
+        <div class="p-6 lg:p-10 space-y-16 pb-32 lg:pb-10">
 
             <!-- Upload Project Section -->
             <section id="upload-project">
-                <h2 class="text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i data-lucide="upload-cloud" class="text-cyan-400"></i> Upload Project</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-card p-8 border-dashed border-white/20 flex flex-col items-center justify-center gap-4 group hover:border-cyan-500/50 transition-all cursor-pointer">
-                        <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-all">
-                            <i data-lucide="audio-waveform" class="text-slate-500 group-hover:text-cyan-400 transition-all"></i>
+                <h2 class="text-xl lg:text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i
+                        data-lucide="upload-cloud" class="text-cyan-400"></i> Upload Project</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="glass-card p-8 border-dashed border-white/20 flex flex-col items-center justify-center gap-4 group hover:border-cyan-500/50 transition-all cursor-pointer">
+                        <div
+                            class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-cyan-500/20 transition-all">
+                            <i data-lucide="audio-waveform"
+                                class="text-slate-500 group-hover:text-cyan-400 transition-all"></i>
                         </div>
                         <h3 class="font-bold">Audio Upload</h3>
                         <p class="text-xs text-slate-500 text-center">MP3, WAV, AIFF, FLAC up to 500MB</p>
                     </div>
-                    <div class="glass-card p-8 border-dashed border-white/20 flex flex-col items-center justify-center gap-4 group hover:border-violet-500/50 transition-all cursor-pointer">
-                        <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-violet-500/20 transition-all">
+                    <div
+                        class="glass-card p-8 border-dashed border-white/20 flex flex-col items-center justify-center gap-4 group hover:border-violet-500/50 transition-all cursor-pointer">
+                        <div
+                            class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-violet-500/20 transition-all">
                             <i data-lucide="scan" class="text-slate-500 group-hover:text-violet-400 transition-all"></i>
                         </div>
                         <h3 class="font-bold">Sheet Scan</h3>
                         <p class="text-xs text-slate-500 text-center">Upload scanned sheet music images</p>
                     </div>
-                    <div class="glass-card p-8 border-dashed border-white/20 flex flex-col items-center justify-center gap-4 group hover:border-purple-500/50 transition-all cursor-pointer">
-                        <div class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-purple-500/20 transition-all">
+                    <div
+                        class="glass-card p-8 border-dashed border-white/20 flex flex-col items-center justify-center gap-4 group hover:border-purple-500/50 transition-all cursor-pointer">
+                        <div
+                            class="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-purple-500/20 transition-all">
                             <i data-lucide="link" class="text-slate-500 group-hover:text-purple-400 transition-all"></i>
                         </div>
                         <h3 class="font-bold">Import Link</h3>
@@ -100,21 +130,35 @@
 
             <!-- My Scores Section -->
             <section id="my-scores">
-                <h2 class="text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i data-lucide="file-music" class="text-violet-400"></i> My Scores</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h2 class="text-xl lg:text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i
+                        data-lucide="file-music" class="text-violet-400"></i> My Scores</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="glass-card p-6 space-y-4">
                         <div class="flex items-center justify-between">
                             <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Recent</span>
-                            <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 text-[10px] font-bold rounded">5 New</span>
+                            <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 text-[10px] font-bold rounded">5
+                                New</span>
                         </div>
                         <div class="space-y-3">
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded bg-cyan-500/20 flex items-center justify-center text-cyan-400"><i data-lucide="music" class="w-4 h-4"></i></div>
-                                <div><p class="text-sm font-semibold">Symphony No. 5</p><p class="text-[10px] text-slate-500">Classical · 12 pages</p></div>
+                                <div
+                                    class="w-8 h-8 rounded bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+                                    <i data-lucide="music" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold">Symphony No. 5</p>
+                                    <p class="text-[10px] text-slate-500">Classical · 12 pages</p>
+                                </div>
                             </div>
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center text-violet-400"><i data-lucide="mic-2" class="w-4 h-4"></i></div>
-                                <div><p class="text-sm font-semibold">Blue Note Jazz</p><p class="text-[10px] text-slate-500">Jazz · 4 pages</p></div>
+                                <div
+                                    class="w-8 h-8 rounded bg-violet-500/20 flex items-center justify-center text-violet-400">
+                                    <i data-lucide="mic-2" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold">Blue Note Jazz</p>
+                                    <p class="text-[10px] text-slate-500">Jazz · 4 pages</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -122,12 +166,24 @@
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">In Progress</span>
                         <div class="space-y-3">
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded bg-yellow-500/20 flex items-center justify-center text-yellow-400"><i data-lucide="film" class="w-4 h-4"></i></div>
-                                <div><p class="text-sm font-semibold">Cybernetic Horizon</p><p class="text-[10px] text-slate-500">Film Score · Engraving</p></div>
+                                <div
+                                    class="w-8 h-8 rounded bg-yellow-500/20 flex items-center justify-center text-yellow-400">
+                                    <i data-lucide="film" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold">Cybernetic Horizon</p>
+                                    <p class="text-[10px] text-slate-500">Film Score · Engraving</p>
+                                </div>
                             </div>
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded bg-purple-500/20 flex items-center justify-center text-purple-400"><i data-lucide="guitar" class="w-4 h-4"></i></div>
-                                <div><p class="text-sm font-semibold">Acoustic Dreams</p><p class="text-[10px] text-slate-500">Folk · Review</p></div>
+                                <div
+                                    class="w-8 h-8 rounded bg-purple-500/20 flex items-center justify-center text-purple-400">
+                                    <i data-lucide="guitar" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold">Acoustic Dreams</p>
+                                    <p class="text-[10px] text-slate-500">Folk · Review</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -135,12 +191,24 @@
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Completed</span>
                         <div class="space-y-3">
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center text-green-400"><i data-lucide="check-circle" class="w-4 h-4"></i></div>
-                                <div><p class="text-sm font-semibold">Moonlight Sonata</p><p class="text-[10px] text-slate-500">Classical · Delivered</p></div>
+                                <div
+                                    class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center text-green-400">
+                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold">Moonlight Sonata</p>
+                                    <p class="text-[10px] text-slate-500">Classical · Delivered</p>
+                                </div>
                             </div>
                             <div class="flex items-center gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center text-green-400"><i data-lucide="check-circle" class="w-4 h-4"></i></div>
-                                <div><p class="text-sm font-semibold">Neon City</p><p class="text-[10px] text-slate-500">Synthwave · Delivered</p></div>
+                                <div
+                                    class="w-8 h-8 rounded bg-green-500/20 flex items-center justify-center text-green-400">
+                                    <i data-lucide="check-circle" class="w-4 h-4"></i>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-semibold">Neon City</p>
+                                    <p class="text-[10px] text-slate-500">Synthwave · Delivered</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -149,25 +217,34 @@
 
             <!-- MIDI Preview Section -->
             <section id="midi-preview">
-                <h2 class="text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i data-lucide="headphones" class="text-purple-400"></i> MIDI Preview</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h2 class="text-xl lg:text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i
+                        data-lucide="headphones" class="text-purple-400"></i> MIDI Preview</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="glass-card p-6 space-y-4">
-                        <div class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
-                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform" class="w-full h-full object-cover opacity-30">
+                        <div
+                            class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
+                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform"
+                                class="w-full h-full object-cover opacity-30">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <button class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-white shadow-lg"><i data-lucide="play" class="fill-current w-4 h-4"></i></button>
+                                <button
+                                    class="w-10 h-10 rounded-full bg-cyan-500 flex items-center justify-center text-white shadow-lg"><i
+                                        data-lucide="play" class="fill-current w-4 h-4"></i></button>
                             </div>
                         </div>
                         <div>
-                            <h3 class="font-bold text-sm">Symphony No. 5 Revision</h3>
+                            <h3 class="font-bold text-sm">Symphony No.</h3>
                             <p class="text-[10px] text-slate-500">Classical · 03:45</p>
                         </div>
                     </div>
                     <div class="glass-card p-6 space-y-4">
-                        <div class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
-                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform" class="w-full h-full object-cover opacity-30">
+                        <div
+                            class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
+                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform"
+                                class="w-full h-full object-cover opacity-30">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <button class="w-10 h-10 rounded-full bg-violet-500 flex items-center justify-center text-white shadow-lg"><i data-lucide="play" class="fill-current w-4 h-4"></i></button>
+                                <button
+                                    class="w-10 h-10 rounded-full bg-violet-500 flex items-center justify-center text-white shadow-lg"><i
+                                        data-lucide="play" class="fill-current w-4 h-4"></i></button>
                             </div>
                         </div>
                         <div>
@@ -176,10 +253,14 @@
                         </div>
                     </div>
                     <div class="glass-card p-6 space-y-4">
-                        <div class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
-                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform" class="w-full h-full object-cover opacity-30">
+                        <div
+                            class="relative aspect-video rounded-xl bg-slate-950 overflow-hidden border border-white/10">
+                            <img src="assets/images/audio_waveform_visual.png" alt="Waveform"
+                                class="w-full h-full object-cover opacity-30">
                             <div class="absolute inset-0 flex items-center justify-center">
-                                <button class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white shadow-lg"><i data-lucide="play" class="fill-current w-4 h-4"></i></button>
+                                <button
+                                    class="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center text-white shadow-lg"><i
+                                        data-lucide="play" class="fill-current w-4 h-4"></i></button>
                             </div>
                         </div>
                         <div>
@@ -192,14 +273,22 @@
 
             <!-- Messages Section -->
             <section id="messages">
-                <h2 class="text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i data-lucide="message-square" class="text-cyan-400"></i> Messages <span class="bg-cyan-500 text-white text-xs px-2 py-0.5 rounded-full">3</span></h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h2 class="text-xl lg:text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i
+                        data-lucide="message-square" class="text-cyan-400"></i> Messages <span
+                        class="bg-cyan-500 text-white text-xs px-2 py-0.5 rounded-full">3</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="glass-card p-6 space-y-4">
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">New</span>
                         <div class="space-y-3">
                             <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-bold">JV</div>
-                                <div><p class="text-sm font-semibold">Julian Vane</p><p class="text-[10px] text-slate-500">Can we adjust the tempo in m. 24?</p><p class="text-[10px] text-cyan-400 mt-1">2 min ago</p></div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xs font-bold">
+                                    JV</div>
+                                <div>
+                                    <p class="text-sm font-semibold">Julian Vane</p>
+                                    <p class="text-[10px] text-slate-500">Can we adjust the tempo in m. 24?</p>
+                                    <p class="text-[10px] text-cyan-400 mt-1">2 min ago</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -207,8 +296,14 @@
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Unread</span>
                         <div class="space-y-3">
                             <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs font-bold">ER</div>
-                                <div><p class="text-sm font-semibold">Elena Rossi</p><p class="text-[10px] text-slate-500">Micro-tonal section is ready for review</p><p class="text-[10px] text-cyan-400 mt-1">1 hour ago</p></div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-violet-500/20 flex items-center justify-center text-violet-400 text-xs font-bold">
+                                    ER</div>
+                                <div>
+                                    <p class="text-sm font-semibold">Elena Rossi</p>
+                                    <p class="text-[10px] text-slate-500">Micro-tonal section is ready for review</p>
+                                    <p class="text-[10px] text-cyan-400 mt-1">1 hour ago</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -216,8 +311,14 @@
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Replies</span>
                         <div class="space-y-3">
                             <div class="flex items-start gap-3 p-3 bg-white/5 rounded-lg">
-                                <div class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-xs font-bold">MT</div>
-                                <div><p class="text-sm font-semibold">Marcus Thorne</p><p class="text-[10px] text-slate-500">VST mockup uploaded for your review</p><p class="text-[10px] text-cyan-400 mt-1">3 hours ago</p></div>
+                                <div
+                                    class="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-xs font-bold">
+                                    MT</div>
+                                <div>
+                                    <p class="text-sm font-semibold">Marcus Thorne</p>
+                                    <p class="text-[10px] text-slate-500">VST mockup uploaded for your review</p>
+                                    <p class="text-[10px] text-cyan-400 mt-1">3 hours ago</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -226,27 +327,37 @@
 
             <!-- Analytics Section -->
             <section id="analytics">
-                <h2 class="text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i data-lucide="bar-chart-3" class="text-blue-400"></i> Analytics</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h2 class="text-xl lg:text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i
+                        data-lucide="bar-chart-3" class="text-blue-400"></i> Analytics</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="glass-card p-6 flex flex-col gap-2">
                         <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Active Projects</span>
                         <div class="flex items-center justify-between">
                             <span class="text-3xl font-black">12</span>
-                            <div class="w-10 h-10 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-400"><i data-lucide="folder-kanban" class="w-5 h-5"></i></div>
+                            <div
+                                class="w-10 h-10 bg-cyan-500/10 rounded-lg flex items-center justify-center text-cyan-400">
+                                <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="glass-card p-6 flex flex-col gap-2">
                         <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Pages Completed</span>
                         <div class="flex items-center justify-between">
                             <span class="text-3xl font-black">156</span>
-                            <div class="w-10 h-10 bg-violet-500/10 rounded-lg flex items-center justify-center text-violet-400"><i data-lucide="file-check-2" class="w-5 h-5"></i></div>
+                            <div
+                                class="w-10 h-10 bg-violet-500/10 rounded-lg flex items-center justify-center text-violet-400">
+                                <i data-lucide="file-check-2" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </div>
                     <div class="glass-card p-6 flex flex-col gap-2">
                         <span class="text-xs text-slate-500 font-bold uppercase tracking-widest">Avg. Accuracy</span>
                         <div class="flex items-center justify-between">
                             <span class="text-3xl font-black">99.8%</span>
-                            <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400"><i data-lucide="target" class="w-5 h-5"></i></div>
+                            <div
+                                class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-400">
+                                <i data-lucide="target" class="w-5 h-5"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -254,18 +365,23 @@
 
             <!-- Settings Section -->
             <section id="settings">
-                <h2 class="text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i data-lucide="settings" class="text-slate-400"></i> Settings</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <h2 class="text-xl lg:text-2xl font-bold font-sora mb-6 flex items-center gap-3"><i
+                        data-lucide="settings" class="text-slate-400"></i> Settings</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="glass-card p-6 space-y-4">
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Account</span>
                         <div class="space-y-3">
                             <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                 <span class="text-sm">Profile Visibility</span>
-                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer"><div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div></div>
+                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
                             </div>
                             <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                 <span class="text-sm">Email Notifications</span>
-                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer"><div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div></div>
+                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -274,22 +390,28 @@
                         <div class="space-y-3">
                             <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                 <span class="text-sm">Dark Mode</span>
-                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer"><div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div></div>
+                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
                             </div>
                             <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg">
                                 <span class="text-sm">Auto-Save</span>
-                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer"><div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div></div>
+                                <div class="w-10 h-5 bg-cyan-500 rounded-full relative cursor-pointer">
+                                    <div class="absolute right-1 top-1 w-3 h-3 bg-white rounded-full"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="glass-card p-6 space-y-4">
                         <span class="text-xs font-bold uppercase tracking-widest text-slate-500">Security</span>
                         <div class="space-y-3">
-                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-all">
+                            <div
+                                class="flex items-center justify-between p-3 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-all">
                                 <span class="text-sm">Change Password</span>
                                 <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
                             </div>
-                            <div class="flex items-center justify-between p-3 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-all">
+                            <div
+                                class="flex items-center justify-between p-3 bg-white/5 rounded-lg cursor-pointer hover:bg-white/10 transition-all">
                                 <span class="text-sm">Two-Factor Auth</span>
                                 <i data-lucide="chevron-right" class="w-4 h-4 text-slate-500"></i>
                             </div>
@@ -300,6 +422,36 @@
 
         </div>
     </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <div
+        class="lg:hidden fixed bottom-0 left-0 w-full bg-slate-950/80 backdrop-blur-xl border-t border-white/10 flex items-center justify-around p-4 z-[100]">
+        <a href="#dashboard" class="sidebar-link flex flex-col items-center gap-1 text-[10px] text-slate-500"
+            onclick="setActiveLink(this)">
+            <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+            <span>Dash</span>
+        </a>
+        <a href="#upload-project" class="sidebar-link flex flex-col items-center gap-1 text-[10px] text-slate-500"
+            onclick="setActiveLink(this)">
+            <i data-lucide="upload-cloud" class="w-5 h-5"></i>
+            <span>Upload</span>
+        </a>
+        <a href="#my-scores" class="sidebar-link flex flex-col items-center gap-1 text-[10px] text-slate-500"
+            onclick="setActiveLink(this)">
+            <i data-lucide="file-music" class="w-5 h-5"></i>
+            <span>Scores</span>
+        </a>
+        <a href="#messages" class="sidebar-link flex flex-col items-center gap-1 text-[10px] text-slate-500"
+            onclick="setActiveLink(this)">
+            <i data-lucide="message-square" class="w-5 h-5"></i>
+            <span>Inbox</span>
+        </a>
+        <a href="#settings" class="sidebar-link flex flex-col items-center gap-1 text-[10px] text-slate-500"
+            onclick="setActiveLink(this)">
+            <i data-lucide="settings" class="w-5 h-5"></i>
+            <span>Set</span>
+        </a>
+    </div>
 
     <script>
         lucide.createIcons();
@@ -341,5 +493,5 @@
         });
     </script>
 </body>
-</html>
 
+</html>

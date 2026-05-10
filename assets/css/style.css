@@ -90,6 +90,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 8px;
     box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
 }
@@ -110,6 +111,7 @@ h1, h2, h3, h4, h5, h6 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 8px;
     backdrop-filter: blur(5px);
 }
@@ -237,6 +239,13 @@ header.sticky-nav {
     border-color: var(--border-color);
 }
 
+[data-theme="light"] .btn-secondary:hover {
+    background: var(--bg-tertiary);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
 [data-theme="light"] .text-white,
 [data-theme="light"] .text-slate-100,
 [data-theme="light"] .text-slate-200 {
@@ -269,8 +278,35 @@ header.sticky-nav {
     background-color: var(--bg-secondary) !important;
 }
 
+/* Brand Logo Hover Colors */
+.brand-sony, .brand-warner, .brand-netflix, .brand-universal {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.brand-sony:hover { color: #D50032 !important; opacity: 1 !important; }
+.brand-warner:hover { color: #004176 !important; opacity: 1 !important; }
+.brand-netflix:hover { color: #E50914 !important; opacity: 1 !important; }
+.brand-universal:hover { color: #003399 !important; opacity: 1 !important; }
+
 [data-theme="light"] .bg-white\/5 {
     background-color: var(--bg-tertiary) !important;
+}
+
+[data-theme="light"] .text-cyan-400 {
+    color: var(--accent-tertiary) !important;
+}
+
+[data-theme="light"] footer a.w-10.h-10:hover {
+    background-color: var(--accent-primary) !important;
+}
+
+[data-theme="light"] footer a.w-10.h-10:hover svg,
+[data-theme="light"] footer a.w-10.h-10:hover path,
+[data-theme="light"] footer a.w-10.h-10:hover circle,
+[data-theme="light"] footer a.w-10.h-10:hover line {
+    color: white !important;
+    stroke: white !important;
 }
 
 /* Ensure icons are visible */
@@ -318,6 +354,40 @@ i {
 
 [data-theme="light"] main {
     background-color: var(--bg-secondary) !important;
+}
+
+#mobileMenu {
+    background-color: #020617 !important; /* Force deep slate opaque */
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#mobileMenuInner {
+    background-color: #020617 !important;
+    opacity: 1 !important;
+}
+
+[data-theme="light"] #mobileMenu,
+[data-theme="light"] #mobileMenuInner {
+    background-color: #FFFFFF !important; /* Force pure opaque white */
+}
+
+.mobile-nav-link {
+    color: #FFFFFF !important; /* White in dark mode */
+}
+
+[data-theme="light"] .mobile-nav-link {
+    color: #000000 !important; /* Black in light mode */
+}
+
+.mobile-nav-link.active {
+    color: var(--accent-primary) !important;
+    font-weight: 900 !important;
+}
+
+header-component {
+    position: relative;
+    z-index: 99999 !important;
 }
 
 [data-theme="light"] .bg-\[\#0B1020\] {
@@ -395,4 +465,47 @@ section {
         opacity: 1 !important;
         display: block !important;
     }
+}
+
+.timeline-year {
+    color: #ffffff !important;
+}
+
+[data-theme="light"] .timeline-year {
+    color: #000000 !important;
+}
+
+.keep-white,
+[data-theme="light"] .keep-white {
+    color: #ffffff !important;
+}
+
+[data-theme="light"] a[href="contact.html"].text-white:hover {
+    color: var(--accent-primary) !important;
+    text-decoration: underline;
+}
+
+.concierge-link {
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.concierge-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-primary);
+}
+
+.concierge-link:hover {
+    color: var(--accent-primary) !important;
+}
+
+.concierge-link:hover::after {
+    width: 100%;
 }
