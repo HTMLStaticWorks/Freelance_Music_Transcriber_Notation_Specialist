@@ -139,7 +139,7 @@ async function loadComponents() {
             <!-- Mobile Menu Overlay - Moved outside header for better z-index isolation -->
             <div id="mobileMenu" style="position: fixed; inset: 0; z-index: 999999; background: #020617; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: none;" class="lg:hidden">
                 <div id="mobileMenuInner" style="display: flex; flex-direction: column; min-height: 100%; padding: 2rem; background: inherit;">
-                    <div class="flex items-center justify-between mb-12">
+                    <div class="flex items-center justify-between mb-8">
                         <div class="flex items-center gap-2">
                             <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-400 rounded-lg flex items-center justify-center">
                                 <i data-lucide="music-4" class="text-white w-6 h-6"></i>
@@ -150,7 +150,7 @@ async function loadComponents() {
                             <i data-lucide="x" class="w-8 h-8"></i>
                         </button>
                     </div>
-                    <div class="flex flex-col gap-6 flex-grow">
+                    <div class="flex flex-col gap-3 flex-grow">
                         <a href="index.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Home</a>
                         <a href="home2.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Home 2</a>
                         <a href="about.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">About</a>
@@ -161,7 +161,7 @@ async function loadComponents() {
                         <a href="contact.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Contact</a>
                         <a href="dashboard.html" class="nav-link mobile-nav-link text-4xl font-black text-purple-400 hover:text-purple-300 transition-all duration-300">Dashboard</a>
                     </div>
-                    <div class="flex items-center justify-between pt-8 border-t border-white/10 mt-10">
+                    <div class="flex items-center justify-between pt-8 border-t border-white/10 mt-6">
                         <div class="flex items-center gap-4">
                             <button id="themeToggleMobile" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors"><i data-lucide="moon" class="w-6 h-6"></i></button>
                             <button id="rtlToggleMobile" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors"><span class="text-sm font-black">RTL</span></button>
