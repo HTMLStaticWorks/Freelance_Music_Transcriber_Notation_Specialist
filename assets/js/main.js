@@ -1,3 +1,12 @@
+// Theme and RTL Initialization (Run immediately to prevent flickering)
+(function() {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    
+    const savedDir = localStorage.getItem('dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize GSAP
     if (typeof gsap !== 'undefined') {
@@ -120,38 +129,50 @@ async function loadComponents() {
                             <button id="rtlToggle" class="p-2 hover:bg-white/10 rounded-full transition-colors"><span class="text-[10px] font-black tracking-tighter">RTL</span></button>
                             <a href="login.html" class="p-2 hover:bg-white/10 rounded-full transition-colors"><i data-lucide="user" class="w-4 h-4"></i></a>
                         </div>
-                        <button id="mobileMenuBtn" class="lg:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                        <button id="mobileMenuBtn" class="lg:hidden p-2 text-primary hover:bg-slate-500/10 rounded-lg transition-colors">
+                            <i data-lucide="menu" class="w-8 h-8"></i>
+                        </button>
                     </div>
                 </nav>
+            </header>
 
-                <!-- Mobile Menu Overlay -->
-                <div id="mobileMenu" style="position: fixed; inset: 0; z-index: 999999; background: #020617; transform: translateX(100%); transition: transform 0.3s ease-out; overflow-y: auto;" class="lg:hidden">
-                    <div id="mobileMenuInner" style="display: flex; flex-direction: column; min-height: 100%; padding: 2rem; background: inherit;">
-                        <div class="flex items-center justify-between mb-10">
+            <!-- Mobile Menu Overlay - Moved outside header for better z-index isolation -->
+            <div id="mobileMenu" style="position: fixed; inset: 0; z-index: 999999; background: #020617; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow-y: auto; display: none;" class="lg:hidden">
+                <div id="mobileMenuInner" style="display: flex; flex-direction: column; min-height: 100%; padding: 2rem; background: inherit;">
+                    <div class="flex items-center justify-between mb-12">
+                        <div class="flex items-center gap-2">
+                            <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-400 rounded-lg flex items-center justify-center">
+                                <i data-lucide="music-4" class="text-white w-6 h-6"></i>
+                            </div>
                             <span class="text-xl font-bold font-sora">Menu</span>
-                            <button id="mobileMenuClose" class="p-2 hover:bg-white/10 rounded-full transition-colors">
-                                <i data-lucide="x" class="w-6 h-6"></i>
-                            </button>
                         </div>
-                        <div class="flex flex-col gap-8 flex-grow">
-                            <a href="index.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Home</a>
-                            <a href="home2.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Home 2</a>
-                            <a href="about.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">About</a>
-                            <a href="services.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Services</a>
-                            <a href="portfolio.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Portfolio</a>
-                            <a href="genres.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Genres</a>
-                            <a href="pricing.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Pricing</a>
-                            <a href="contact.html" class="nav-link mobile-nav-link text-3xl font-black hover:text-cyan-400 transition-colors">Contact</a>
-                            <a href="dashboard.html" class="nav-link mobile-nav-link text-3xl font-black text-purple-400 hover:text-purple-300 transition-colors">Dashboard</a>
+                        <button id="mobileMenuClose" class="p-2 hover:bg-slate-500/10 rounded-full transition-colors">
+                            <i data-lucide="x" class="w-8 h-8"></i>
+                        </button>
+                    </div>
+                    <div class="flex flex-col gap-6 flex-grow">
+                        <a href="index.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Home</a>
+                        <a href="home2.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Home 2</a>
+                        <a href="about.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">About</a>
+                        <a href="services.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Services</a>
+                        <a href="portfolio.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Portfolio</a>
+                        <a href="genres.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Genres</a>
+                        <a href="pricing.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Pricing</a>
+                        <a href="contact.html" class="nav-link mobile-nav-link text-4xl font-black hover:text-cyan-400 transition-all duration-300">Contact</a>
+                        <a href="dashboard.html" class="nav-link mobile-nav-link text-4xl font-black text-purple-400 hover:text-purple-300 transition-all duration-300">Dashboard</a>
+                    </div>
+                    <div class="flex items-center justify-between pt-8 border-t border-white/10 mt-10">
+                        <div class="flex items-center gap-4">
+                            <button id="themeToggleMobile" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors"><i data-lucide="moon" class="w-6 h-6"></i></button>
+                            <button id="rtlToggleMobile" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors"><span class="text-sm font-black">RTL</span></button>
                         </div>
-                        <div class="flex items-center gap-4 pt-6 border-t border-white/10">
-                            <button id="themeToggleMobile" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><i data-lucide="moon" class="w-5 h-5"></i></button>
-                            <button id="rtlToggleMobile" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><span class="text-xs font-bold">RTL</span></button>
-                            <a href="login.html" class="p-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors"><i data-lucide="user" class="w-5 h-5"></i></a>
-                        </div>
+                        <a href="login.html" class="p-4 bg-white/5 rounded-2xl hover:bg-white/10 transition-colors flex items-center gap-3">
+                            <span class="text-sm font-bold">Account</span>
+                            <i data-lucide="user" class="w-6 h-6"></i>
+                        </a>
                     </div>
                 </div>
-            </header>
+            </div>
         `;
 
         // Mobile Menu Toggle
@@ -162,39 +183,26 @@ async function loadComponents() {
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 const theme = document.documentElement.getAttribute('data-theme');
-                mobileMenu.style.background = theme === 'light' ? '#FFFFFF' : '#020617';
-                mobileMenu.style.color = theme === 'light' ? '#000000' : '#FFFFFF';
-                mobileMenu.style.transform = 'translateX(0)';
+                mobileMenu.style.display = 'block';
+                setTimeout(() => {
+                    mobileMenu.style.background = theme === 'light' ? '#FFFFFF' : '#020617';
+                    mobileMenu.style.color = theme === 'light' ? '#000000' : '#FFFFFF';
+                    mobileMenu.style.transform = 'translateX(0)';
+                }, 10);
                 document.body.style.overflow = 'hidden';
             });
         }
         if (mobileMenuClose && mobileMenu) {
             mobileMenuClose.addEventListener('click', () => {
                 mobileMenu.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    mobileMenu.style.display = 'none';
+                }, 400);
                 document.body.style.overflow = '';
             });
         }
 
-        // Mobile Theme Toggle
-        const themeToggleMobile = document.getElementById('themeToggleMobile');
-        if (themeToggleMobile) {
-            themeToggleMobile.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-                setTheme(newTheme);
-            });
-        }
-
-        // Mobile RTL Toggle
-        const rtlToggleMobile = document.getElementById('rtlToggleMobile');
-        if (rtlToggleMobile) {
-            rtlToggleMobile.addEventListener('click', () => {
-                const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-                const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-                document.documentElement.setAttribute('dir', newDir);
-                localStorage.setItem('dir', newDir);
-            });
-        }
+        // Note: Event listeners for theme and RTL toggles are now handled globally below
 
         // Highlight Active Link
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
@@ -211,38 +219,32 @@ async function loadComponents() {
         });
     }
 
-    // Initialize Theme
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
+    // Initialize Theme UI
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+    updateThemeUI(currentTheme);
 
-    // Initialize RTL
-    const savedDir = localStorage.getItem('dir');
-    if (savedDir) {
-        document.documentElement.setAttribute('dir', savedDir);
-    }
-
-    // Global Toggles (Login/Register/Header)
-    const themeToggles = document.querySelectorAll('#themeToggle, #themeToggleMobile');
+    // Global Theme Toggles
+    const themeToggles = document.querySelectorAll('#themeToggle, #themeToggleMobile, #themeToggleSettings');
     themeToggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            setTheme(newTheme);
-        });
+        btn.onclick = () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+            setTheme(next);
+        };
     });
 
+    // Global RTL Toggles
     const rtlToggles = document.querySelectorAll('#rtlToggle, #rtlToggleMobile');
     rtlToggles.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-            const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-            document.documentElement.setAttribute('dir', newDir);
-            localStorage.setItem('dir', newDir);
-        });
+        btn.onclick = () => {
+            const current = document.documentElement.getAttribute('dir') || 'ltr';
+            const next = current === 'ltr' ? 'rtl' : 'ltr';
+            document.documentElement.setAttribute('dir', next);
+            localStorage.setItem('dir', next);
+        };
     });
 
     if (footer) {
-
         footer.innerHTML = `
             <footer class="relative pt-20 pb-10 bg-slate-950 border-t border-white/5 overflow-hidden">
                 <div class="orb orb-2"></div>
@@ -333,20 +335,40 @@ async function loadComponents() {
         `;
     }
 
-    // Icons are now initialized in the DOMContentLoaded listener
+    // Re-initialize Lucide icons after dynamic injection
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 }
 
 function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
-    
+    updateThemeUI(theme);
+}
+
+function updateThemeUI(theme) {
     const themeToggles = document.querySelectorAll('#themeToggle, #themeToggleMobile');
     themeToggles.forEach(toggle => {
         const icon = theme === 'light' ? 'moon' : 'sun';
         toggle.innerHTML = `<i data-lucide="${icon}" class="w-5 h-5"></i>`;
     });
+
+    // Update Dashboard Settings Toggle if it exists
+    const settingsToggle = document.getElementById('themeToggleSettings');
+    if (settingsToggle) {
+        const dot = settingsToggle.querySelector('div');
+        if (theme === 'dark') {
+            settingsToggle.classList.add('bg-cyan-500');
+            settingsToggle.classList.remove('bg-slate-700');
+            if (dot) dot.style.transform = 'translateX(20px)';
+        } else {
+            settingsToggle.classList.remove('bg-cyan-500');
+            settingsToggle.classList.add('bg-slate-700');
+            if (dot) dot.style.transform = 'translateX(0)';
+        }
+    }
     
-    // Always re-create icons after theme change
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
     }

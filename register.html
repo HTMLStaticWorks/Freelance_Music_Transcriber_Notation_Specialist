@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class=" min-h-screen flex items-center justify-center p-6 py-20 relative">
-    
+
     <!-- Background Elements -->
     <div class="absolute inset-0 z-0">
         <img src="assets/images/music_notation_bg.png" class="w-full h-full object-cover opacity-20" alt="Background">
@@ -22,8 +24,14 @@
     <!-- Auth Card -->
     <div class="glass-card w-full max-w-lg p-10 relative z-10 text-center">
         <a href="index.html" class="inline-flex items-center gap-2 mb-10">
-            <div class="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-400 rounded-lg flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+            <div
+                class="w-10 h-10 bg-gradient-to-br from-violet-500 to-cyan-400 rounded-lg flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6">
+                    <path d="M9 18V5l12-2v13"></path>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <circle cx="18" cy="16" r="3"></circle>
+                </svg>
             </div>
             <span class="text-2xl font-bold font-sora">Notation<span class="text-cyan-400">Pro</span></span>
         </a>
@@ -32,35 +40,42 @@
         <p class="text-slate-500 text-sm mb-10">Join the elite community of composers and creators</p>
 
         <form class="space-y-6 text-left">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="space-y-2">
-                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">First Name</label>
-                    <input type="text" placeholder="First Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
-                </div>
-                <div class="space-y-2">
-                    <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Last Name</label>
-                    <input type="text" placeholder="Last Name" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
-                </div>
+            <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">First Name</label>
+                <input type="text" placeholder="First Name"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+            </div>
+            <div class="space-y-2">
+                <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Last Name</label>
+                <input type="text" placeholder="Last Name"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
             </div>
 
             <div class="space-y-2">
                 <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Email Address</label>
-                <input type="email" placeholder="Your Email Address" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                <input type="email" placeholder="Your Email Address"
+                    class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="space-y-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Password</label>
                     <div class="relative">
-                        <input type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
-                        <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                        <input type="password" placeholder="••••••••"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                        <button type="button"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"><i
+                                data-lucide="eye" class="w-4 h-4"></i></button>
                     </div>
                 </div>
                 <div class="space-y-2">
                     <label class="text-xs font-bold uppercase tracking-widest text-slate-500">Confirm Password</label>
                     <div class="relative">
-                        <input type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
-                        <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"><i data-lucide="eye" class="w-4 h-4"></i></button>
+                        <input type="password" placeholder="••••••••"
+                            class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-colors">
+                        <button type="button"
+                            class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 hover:text-white"><i
+                                data-lucide="eye" class="w-4 h-4"></i></button>
                     </div>
                 </div>
             </div>
@@ -75,9 +90,11 @@
                 <p class="text-[10px] text-slate-500 uppercase tracking-widest">Strength: Good</p>
             </div>
 
-            <label class="flex items-start gap-3 cursor-pointer group">
-                <input type="checkbox" class="mt-1 rounded border-white/10 bg-white/5 text-cyan-500 focus:ring-cyan-500">
-                <span class="text-xs text-slate-500 group-hover:text-slate-300">I agree to the <a href="#" class="text-cyan-400 font-bold hover:underline">Terms of Service</a> and <a href="#" class="text-cyan-400 font-bold hover:underline">Privacy Policy</a></span>
+            <label class="flex items-center gap-3 cursor-pointer group whitespace-nowrap">
+                <input type="checkbox"
+                    class="rounded border-white/10 bg-white/5 text-cyan-500 focus:ring-cyan-500">
+                <span class="text-[11px] sm:text-xs text-slate-500 group-hover:text-slate-300">I agree to the <a href="#"
+                        class="text-cyan-400 font-bold hover:underline">Terms of Service</a></span>
             </label>
 
             <button type="submit" class="btn-primary w-full py-4 text-lg">Create Account</button>
@@ -90,17 +107,32 @@
         </div>
 
         <div class="flex justify-center gap-6">
-            <button class="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all group" title="Continue with Google">
-                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-slate-400 group-hover:text-white transition-colors">
-                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/>
-                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+            <button
+                class="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all group"
+                title="Continue with Google">
+                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 fill-current text-slate-400 group-hover:text-white transition-colors">
+                    <path
+                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                        fill="#4285F4" />
+                    <path
+                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                        fill="#34A853" />
+                    <path
+                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"
+                        fill="#FBBC05" />
+                    <path
+                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                        fill="#EA4335" />
                 </svg>
             </button>
-            <button class="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all group" title="Continue with Apple">
-                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 fill-current text-slate-400 group-hover:text-white transition-colors">
-                    <path d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C4.38 17.15 3.33 11.2 5.92 7.82c1.3-1.63 3.03-2.6 4.84-2.5 1.48.1 2.37.95 3.52.95 1.14 0 2.44-1.04 4.02-.85 1.66.2 2.92.86 3.73 2.05-3.3 1.95-2.77 6.13.56 7.47-1.12 2.87-2.62 5.37-3.5 6.34zM12.03 5.35c-.12-2.6 2.1-4.8 4.6-4.96.24 2.62-2.2 5.08-4.6 4.96z"/>
+            <button
+                class="w-14 h-14 flex items-center justify-center bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-all group"
+                title="Continue with Apple">
+                <svg viewBox="0 0 24 24" width="24" height="24" xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 fill-current text-slate-400 group-hover:text-white transition-colors">
+                    <path
+                        d="M17.05 20.28c-.98.95-2.05.88-3.08.4-1.09-.5-2.08-.48-3.24 0-1.44.62-2.2.44-3.06-.4C4.38 17.15 3.33 11.2 5.92 7.82c1.3-1.63 3.03-2.6 4.84-2.5 1.48.1 2.37.95 3.52.95 1.14 0 2.44-1.04 4.02-.85 1.66.2 2.92.86 3.73 2.05-3.3 1.95-2.77 6.13.56 7.47-1.12 2.87-2.62 5.37-3.5 6.34zM12.03 5.35c-.12-2.6 2.1-4.8 4.6-4.96.24 2.62-2.2 5.08-4.6 4.96z" />
                 </svg>
             </button>
         </div>
@@ -112,5 +144,5 @@
 
     <script src="assets/js/main.js"></script>
 </body>
-</html>
 
+</html>
